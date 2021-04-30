@@ -31,6 +31,7 @@ function App() {
       });
       spotify.getUserPlaylists()
       .then((playlists) => {
+        // console.log(playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists
@@ -38,9 +39,18 @@ function App() {
       });
       spotify.getPlaylist("37i9dQZF1E34Ucml4HHx1w")
       .then((playlist) => {
+        // console.log(playlist)
         dispatch({
           type: "SET_DISCOVER_WEEKLY", 
           discover_weekly: playlist, 
+        });
+      });
+      spotify.getPlaylist("4bpF9WDnWJ7dLsdvLmOmPQ")
+      .then((playlist) => {
+        console.log(playlist);
+        dispatch({
+          type: "SET_CURRENT_PLAYLIST",
+          current_playlist: playlist
         });
       });
     }
