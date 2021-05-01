@@ -9,7 +9,7 @@ import Player from "./components/player/Player";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue(); 
+  const [{ user, token, playlists }, dispatch] = useDataLayerValue(); 
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -43,14 +43,6 @@ function App() {
         dispatch({
           type: "SET_DISCOVER_WEEKLY", 
           discover_weekly: playlist, 
-        });
-      });
-      spotify.getPlaylist("4bpF9WDnWJ7dLsdvLmOmPQ")
-      .then((playlist) => {
-        console.log(playlist);
-        dispatch({
-          type: "SET_CURRENT_PLAYLIST",
-          current_playlist: playlist
         });
       });
     }
