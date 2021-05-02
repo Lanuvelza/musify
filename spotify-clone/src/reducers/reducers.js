@@ -35,7 +35,6 @@ const reducer = (state, action) => {
         discover_weekly: action.discover_weekly,
       };
     case "SET_CURRENT_PLAYLIST":
-      console.log("here");
       return {
         ...state,
         current_playlist: action.current_playlist,

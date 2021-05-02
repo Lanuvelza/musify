@@ -6,6 +6,7 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 
 
 function Header({ spotify }) {
+  console.log(spotify);
   const [{ user }, dispatch] = useDataLayerValue(); 
   const [search, setSearch] = useState("");
 
@@ -19,6 +20,7 @@ function Header({ spotify }) {
         tracks: results.tracks
       });
     });
+
     spotify.searchArtists(search)
     .then((results) => {
       console.log(results.artists);
@@ -27,6 +29,7 @@ function Header({ spotify }) {
         artists: results.artists
       });
     });
+
     spotify.searchAlbums(search)
     .then((results) => {
       console.log(results.albums);
@@ -35,6 +38,18 @@ function Header({ spotify }) {
         albums: results.albums
       });
     });
+
+    spotify.searchPlaylists(search)
+    .then((results) => {
+      console.log(results);
+    })
+
+    dispatch({
+      type: "SET_CURRENT_PLAYLIST",
+      current_playlist: null
+    });
+
+    setSearch("");
   }
 
   return (
@@ -42,7 +57,12 @@ function Header({ spotify }) {
       <div className="header__left">
          <Search className="header__left__searchIcon"/>
         <form onSubmit={handleSubmit}>
-         <input placeholder="Search for Artists, Songs, or Albums" type="text" onChange={(e) => {setSearch(e.target.value)}}/>
+         <input 
+          placeholder="Search for Artists, Songs, or Albums" 
+          type="text" 
+          value={search} 
+          onChange={(e) => {setSearch(e.target.value)}}
+        />
         </form>
       </div>
       <div className="header__right">

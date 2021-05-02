@@ -6,10 +6,7 @@ import Header from "./Header";
 import SongRow from "./SongRow";
 
 function Body({spotify}) {
-  const [{ discover_weekly, playlists, current_playlist, albums }, dispatch] = useDataLayerValue();
-  console.log(playlists);
-  console.log(discover_weekly);
-  console.log(current_playlist);
+  const [{ discover_weekly, playlists, current_playlist, albums, tracks }, dispatch] = useDataLayerValue();
 
   return (
     <div className="body">
@@ -42,13 +39,17 @@ function Body({spotify}) {
           <Favorite fontSize="large" />
           <MoreHoriz />
         </div>
-        {current_playlist ? 
-        current_playlist.tracks.items.map((item) => (
-          <SongRow track={item.track} key={item.track.id}/>
-        )) : 
-        discover_weekly?.tracks.items.map((item) => (
-          <SongRow track={item.track} key={item.track.id} />
-        ))}
+        {tracks ? tracks.items.map((track) => (
+          <SongRow track={track} key={track.id} />
+        )): 
+        (current_playlist ? 
+          current_playlist.tracks.items.map((item) => (
+            <SongRow track={item.track} key={item.track.id}/>
+          )) : 
+          discover_weekly?.tracks.items.map((item) => (
+            <SongRow track={item.track} key={item.track.id} />
+          )))}
+      
       </div>
     </div>
   );
