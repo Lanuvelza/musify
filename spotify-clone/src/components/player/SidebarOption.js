@@ -4,18 +4,27 @@ import "./styles/SidebarOption.css"
 
 
 function SidebarOption({spotify, title, Icon, id}) {
-  console.log(spotify)
   const [{}, dispatch] = useDataLayerValue();
 
   const changePlaylist = (id) => {
-    console.log(id);
     spotify.getPlaylist(id)
     .then((playlist) => {
-      console.log(playlist);
       dispatch({
         type: 'SET_CURRENT_PLAYLIST', 
         current_playlist: playlist
       })
+      dispatch({
+        type: 'SET_ALBUMS',
+        albums: null
+      });
+      dispatch({
+        type: 'SET_ARTISTS',
+        albums: null
+      });
+      dispatch({
+        type: 'SET_TRACKS',
+        tracks: null
+      });
     })
   }
 

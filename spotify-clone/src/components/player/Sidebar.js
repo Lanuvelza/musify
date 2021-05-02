@@ -15,6 +15,18 @@ function Sidebar({ spotify }) {
       type: "SET_CURRENT_PLAYLIST",
       current_playlist: null
     });
+    dispatch({
+      type: 'SET_ALBUMS',
+      albums: null
+    });
+    dispatch({
+      type: 'SET_ARTISTS',
+      albums: null
+    });
+    dispatch({
+      type: 'SET_TRACKS',
+      tracks: null
+    });
   }
 
   return (
@@ -26,8 +38,8 @@ function Sidebar({ spotify }) {
         onClick={handleClick}
       />
 
-      <SidebarOption title="Home" Icon={HomeIcon} />
-      <SidebarOption title="Search" Icon={SearchIcon} />
+      <SidebarOption title="Home" Icon={HomeIcon}/>
+      <SidebarOption title="Search" Icon={SearchIcon}/>
       <SidebarOption title="Your Library" Icon={LibraryMusic} />
       <br /> 
       <strong className="sidebar_title">PLAYLISTS</strong>
