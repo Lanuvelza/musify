@@ -6,7 +6,7 @@ import Header from "./Header";
 import SongRow from "./SongRow";
 
 function Body({spotify}) {
-  const [{ discover_weekly, playlists, current_playlist }, dispatch] = useDataLayerValue();
+  const [{ discover_weekly, playlists, current_playlist, albums }, dispatch] = useDataLayerValue();
   console.log(playlists);
   console.log(discover_weekly);
   console.log(current_playlist);
@@ -15,6 +15,9 @@ function Body({spotify}) {
     <div className="body">
       <Header spotify={spotify} /> 
       <div className="body__info">
+        {albums ? albums.items.map((item) => (
+          <img src={item.images[0].url} />
+        )) : null}
         {current_playlist ? 
         <img src = {playlists.items ? playlists.items[0].images[0].url : null} alt="" /> :
         <img src = {discover_weekly?.images[0]?.url} alt="" /> }

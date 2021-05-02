@@ -15,9 +15,14 @@
   flex: 0.5;
 }
 
-.header__left > input {
+.header__left__searchIcon {
+  margin: 5px;
+}
+
+.header__left > form > input {
   border: none;
-  width: 100%;
+  width: 350px;
+  font-size: 20px;
 }
 
 input:focus {
