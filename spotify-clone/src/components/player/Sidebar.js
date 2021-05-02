@@ -10,12 +10,20 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 function Sidebar({ spotify }) {
   const [{ playlists }, dispatch] = useDataLayerValue();
 
+  const handleClick = () => {
+    dispatch({
+      type: "SET_CURRENT_PLAYLIST",
+      current_playlist: null
+    });
+  }
+
   return (
     <div className="sidebar">
       <img 
         className="sidebar__logo"
         src="https://music-b26f.kxcdn.com/wp-content/uploads/2017/06/635963274692858859903160895_spotify-logo-horizontal-black.jpg"
         alt="Spotify logo"
+        onClick={handleClick}
       />
 
       <SidebarOption title="Home" Icon={HomeIcon} />

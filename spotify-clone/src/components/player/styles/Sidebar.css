@@ -19,6 +19,7 @@
   width: auto;
   padding: 10px;
   margin: auto;
+  cursor: pointer;
 }
 
 .sidebar__title {
