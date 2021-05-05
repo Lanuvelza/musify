@@ -1,0 +1,22 @@
+.latestalbum__info {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.latestalbum__image {
+  height: 20vw;
+  margin: 0 20px;
+  border-radius: 5px 40px 5px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.latestalbum__infoText {
+  flex: 1;
+}
+
+.latestalbum__infoText > h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: aliceblue;
+}
