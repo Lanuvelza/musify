@@ -4,11 +4,17 @@
   padding: 10px;
 }
 
-.latestalbum__image {
+.latestalbum__info > img {
   height: 20vw;
   margin: 0 20px;
-  border-radius: 5px 40px 5px;
+  border-radius: 15px 40px 15px;
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+img:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .latestalbum__infoText {
