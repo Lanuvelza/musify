@@ -15,7 +15,7 @@ function Body({spotify}) {
       <Header spotify={spotify} /> 
       <div className="body__info">
         <div className="body__artistInfo">
-          {artists ? <Artist artist={artists.items[0]} /> : null }
+          {artists ? <Artist artist={artists.items[0]} albums={albums} /> : null }
           {albums ? <LatestAlbum spotify={spotify}/>
           : 
           (current_playlist ? 
