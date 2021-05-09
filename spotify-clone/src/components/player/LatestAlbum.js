@@ -36,7 +36,7 @@ function LatestAlbum({spotify}) {
       <div className="latestalbum__infoText">
         {albums ? 
         <>
-          <strong>Latest Album</strong>
+          <h1><strong>Latest Release</strong></h1>
           <h2>{albums.items[0].name}</h2>
         </> : null }
       </div>
