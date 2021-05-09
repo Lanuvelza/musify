@@ -5,20 +5,23 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 import Header from "./Header";
 import SongRow from "./SongRow";
 import LatestAlbum from "./LatestAlbum";
+import Artist from "./Artist";
 
 function Body({spotify}) {
-  const [{ discover_weekly, playlists, current_playlist, albums, tracks }, dispatch] = useDataLayerValue();
+  const [{ discover_weekly, playlists, current_playlist, albums, tracks, artists }, dispatch] = useDataLayerValue();
 
   return (
     <div className="body">
       <Header spotify={spotify} /> 
       <div className="body__info">
-        {albums ? <LatestAlbum spotify={spotify}/>
-        : 
-        (current_playlist ? 
-        <img src = {playlists.items ? playlists.items[0].images[0].url : null} alt="" /> :
-        <img src = {discover_weekly?.images[0]?.url} alt="" /> )
-        }
+        <div className="body__artistInfo">
+          {artists ? <Artist artist={artists.items[0]} /> : null }
+          {albums ? <LatestAlbum spotify={spotify}/>
+          : 
+          (current_playlist ? 
+          <img src = {playlists.items ? playlists.items[0].images[0].url : null} alt="" /> :
+          <img src = {discover_weekly?.images[0]?.url} alt="" /> )}
+        </div>
         <div className="body__infoText">
           {albums ? null :
           
