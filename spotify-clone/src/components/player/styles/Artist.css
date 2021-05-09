@@ -1,0 +1,33 @@
+.artist__Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  /* background-color: pink; */
+
+}
+
+.artist__Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.artist__Info > h2 {
+  font-size: 60px;
+  /* margin-left: 15px; */
+  color: aliceblue;
+}
+
+.artist__Info > hr {
+  border: 100px aliceblue;
+}
+
+.artist__followers {
+  display: flex;
+}
+
+.artist__followers > p {
+  text-align: center;
+}
