@@ -46,7 +46,7 @@ function Body({spotify}) {
           <Favorite fontSize="large" />
           <MoreHoriz />
         </div>
-        {tracks ? tracks.items.map((track) => (
+        {tracks ? tracks.map((track) => (
           <SongRow track={track} key={track.id} />
         )): 
         (current_playlist ? 
