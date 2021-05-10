@@ -17,7 +17,7 @@
 .artist__Info > h2 {
   font-size: 60px;
   text-shadow: 2px 2px 18px black;
-  /* margin-left: 15px; */
+  margin-left: 15px;
   color: aliceblue;
   opacity: 0.8;
 }
