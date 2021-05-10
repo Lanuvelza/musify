@@ -19,7 +19,6 @@
   text-shadow: 2px 2px 18px black;
   margin-left: 15px;
   color: aliceblue;
-  opacity: 0.8;
 }
 
 .artist__Info > hr {
@@ -33,5 +32,4 @@
 .artist__followers > h2 {
   text-align: center;
   text-shadow: 2px 2px 18px black;
-  opacity: 0.8;
 }
