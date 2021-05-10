@@ -33,16 +33,27 @@ const useStyles = makeStyles({
 })
 
 
-function Artist({artist, albums}) {
-  // const [{albums}, dispatch] = useDataLayerValue();
+function Artist({artist, albums, spotify}) {
+  const [{}, dispatch] = useDataLayerValue();
   const props = { backgroundImage: albums ? albums.items[0].images[0].url : artist.images[0].url, backgroundColor: 'pink' }
   const classes = useStyles(props);
+
+  const handleClick = () => {
+    spotify.getArtistTopTracks(artist.id, "US")
+      .then((results) => {
+        console.log("artist tracks", results);
+        dispatch({
+          type: "SET_TRACKS",
+          tracks: results.tracks
+        });
+    });
+  }
 
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
       <div className={classes.section}>
-        <Avatar src={artist.images[0].url} alt={artist.name} className={classes.avatar}/>
+        <Avatar src={artist.images[0].url} alt={artist.name} className={classes.avatar} onClick={handleClick}/>
         <div className="artist__Info">
           <h2>{artist ? artist.name : null}</h2>
           <hr />
