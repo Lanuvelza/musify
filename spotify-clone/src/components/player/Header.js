@@ -12,14 +12,6 @@ function Header({ spotify }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    spotify.searchTracks(search)
-    .then((results) => {
-      console.log(results.tracks);
-      dispatch({
-        type: "SET_TRACKS",
-        tracks: results.tracks
-      });
-    });
 
     spotify.searchArtists(search)
     .then((results) => {
@@ -28,21 +20,27 @@ function Header({ spotify }) {
         type: "SET_ARTISTS",
         artists: results.artists
       });
-    });
 
-    spotify.searchAlbums(search)
-    .then((results) => {
-      console.log(results.albums);
-      dispatch({
-        type: "SET_ALBUMS",
-        albums: results.albums
+      const artist_id = results.artists.items[0].id; 
+      
+      spotify.getArtistAlbums(artist_id, { include_groups: ["single", "album"] })
+      .then((results) => {
+        console.log("artist albums", results);
+        dispatch({
+          type: "SET_ALBUMS", 
+          albums: results
+        });
+      });
+      
+      spotify.getArtistTopTracks(artist_id, "US")
+      .then((results) => {
+        console.log("artist tracks", results);
+        dispatch({
+          type: "SET_TRACKS",
+          tracks: results.tracks
+        });
       });
     });
-
-    spotify.searchPlaylists(search)
-    .then((results) => {
-      console.log(results);
-    })
 
     dispatch({
       type: "SET_CURRENT_PLAYLIST",
@@ -58,7 +56,7 @@ function Header({ spotify }) {
          <Search className="header__left__searchIcon"/>
         <form onSubmit={handleSubmit}>
          <input 
-          placeholder="Search for Artists, Songs, or Albums" 
+          placeholder="Search for an Artist..." 
           type="text" 
           value={search} 
           onChange={(e) => {setSearch(e.target.value)}}
