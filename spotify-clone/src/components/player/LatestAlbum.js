@@ -8,7 +8,20 @@ import "./styles/LatestAlbum.css";
 
 function LatestAlbum({spotify}) {
   const [{albums}, dispatch] = useDataLayerValue(); 
-  console.log(spotify);
+  console.log(albums);
+
+  // Sort by latest release date
+  albums.items.sort((a, b) => {
+    if (a.release_date < b.release_date) {
+      return 1;
+    }
+    if (a.release_date > b.release_date) {
+      return -1;
+    }
+    return 0;
+  })
+
+
 
   const handleClick = () => {
     spotify.getAlbum(albums.items[0].id)
@@ -21,7 +34,7 @@ function LatestAlbum({spotify}) {
       });
       dispatch({
         type: "SET_TRACKS",
-        tracks: album.tracks
+        tracks: album.tracks.items
       })
     });
   }
