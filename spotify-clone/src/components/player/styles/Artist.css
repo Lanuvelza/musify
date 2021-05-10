@@ -27,6 +27,7 @@
 
 .artist__followers {
   display: flex;
+  margin-left: 25px;
 }
 
 .artist__followers > h2 {
