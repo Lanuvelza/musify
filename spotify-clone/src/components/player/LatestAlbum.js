@@ -37,7 +37,7 @@ function LatestAlbum({spotify}) {
         {albums ? 
         <>
           <h1><strong>Latest Release</strong></h1>
-          <h2>{albums.items[0].name}</h2>
+          <h2 onClick={handleClick} >{albums.items[0].name}</h2>
         </> : null }
       </div>
     </div>

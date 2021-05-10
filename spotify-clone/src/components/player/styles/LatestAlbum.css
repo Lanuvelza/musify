@@ -24,5 +24,12 @@ img:hover {
 .latestalbum__infoText > h2 {
   font-size: 48px;
   margin-bottom: 10px;
-  color: aliceblue;
+  color: lightsteelblue;
 }
+
+.latestalbum__infoText > h2:hover {
+  cursor: pointer;
+  color: pink;
+}
+
+
