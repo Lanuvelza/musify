@@ -8,7 +8,9 @@ export const initialState = {
   artists: null,
   album: null,
   albums: null,
-  current_playlist: null
+  current_playlist: null,
+  playing: false,
+  uri: null, 
 }
 
 const reducer = (state, action) => {
@@ -29,7 +31,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         playlists: action.playlists,
-      }
+      };
+    case "SET_ITEM": 
+      return {
+        ...state,
+        item: action.item,
+      };
     case "SET_DISCOVER_WEEKLY":
       return {
         ...state, 
@@ -54,12 +61,22 @@ const reducer = (state, action) => {
       return {
         ...state,
         album: action.album,
-      }
+      };
     case "SET_ALBUMS":
       return {
         ...state,
         albums: action.albums
-      }
+      };
+    case "SET_PLAYING":
+      return {
+        ...state,
+        playing: action.playing
+      };
+    case "SET_URI":
+      return {
+        ...state, 
+        uri: action.uri
+      };
     default:
       return state;
   }

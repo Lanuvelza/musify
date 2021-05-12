@@ -32,4 +32,13 @@ img:hover {
   color: pink;
 }
 
+.latestalbum__playButton {
+  font-size: 100px !important; 
+}
+
+.latestalbum__playButton:hover {
+  transition: 100ms transform ease-in;
+  transform: scale(1.08);
+}
+
 
