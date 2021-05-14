@@ -3,10 +3,10 @@
   display: flex;
   justify-content: space-evenly;
   bottom: 0;
-  height: 65px;
+  /* height: 85px; */
   width: 100%;
-  background-color: #282828;
-  padding: 20px;
+  /* background-color: #282828; */
+  /* padding: 20px; */
 }
 
 .footer__left {
@@ -63,3 +63,22 @@
   color: #1ed15e;
 }
 
+.rswp__toggle {
+  outline: none;
+}
+
+button[aria-label="Next Track"] {
+  outline: none;
+}
+
+button[aria-label="Previous Track"] {
+  outline: none;
+}
+
+._VolumeRSWP > button {
+  outline: none;
+}
+
+._DevicesRSWP > button {
+  outline: none;
+}

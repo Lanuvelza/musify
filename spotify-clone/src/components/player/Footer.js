@@ -64,19 +64,32 @@ function Footer() {
     //     </Grid>
     //   </div>
     // </div>
-    <SpotifyPlayer 
-      token={token}
-      callback={state => {
-        if (!state.isPlaying) {
-          dispatch({
-            type: "SET_PLAYING",
-            playing: false
-          })
-        }
-      }}
-      play={playing}
-      uris={uri ? [uri] : []} 
-    />
+    <div className="footer">    
+      <SpotifyPlayer 
+        token={token}
+        callback={state => {
+          if (!state.isPlaying) {
+            dispatch({
+              type: "SET_PLAYING",
+              playing: false
+            })
+          }
+          console.log(state.track);
+        }}
+        play={playing}
+        uris={uri ? [uri] : []} 
+        styles={{
+          height: '85px',
+          bgColor: '#282828',
+          color: '#1ed15e',
+          sliderColor: '#1ed15e',
+          sliderHandleColor: '#282828',
+          trackNameColor: 'white',
+          trackArtistColor: 'white',
+          errorColor: 'white',
+        }}
+      />
+    </div>
   );
 }
 
