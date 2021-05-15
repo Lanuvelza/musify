@@ -5,6 +5,7 @@ export const initialState = {
   playing: false,
   item: null,
   tracks: null,
+  current_track: null,
   artists: null,
   album: null,
   albums: null,
@@ -52,6 +53,11 @@ const reducer = (state, action) => {
         ...state,
         tracks: action.tracks,
       };
+    case "SET_CURRENT_TRACK":
+      return {
+        ...state,
+        current_track: action.current_track,
+      }
     case "SET_ARTISTS": 
       return {
         ...state,
