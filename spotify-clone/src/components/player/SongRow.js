@@ -18,7 +18,7 @@ function SongRow({ track }) {
   }
 
   return (
-    <div className="songRow" onClick={playTrack}>
+    <div className={current_track.id === track.id ? "songRow__selected" : "songRow"} onClick={playTrack}>
       {track.album ? 
         <img src={track.album.images[0].url} alt="" className="songRow__album" /> :
         <img src={album.images[0].url} alt="" className="songRow__album" /> }

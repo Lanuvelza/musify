@@ -13,6 +13,17 @@
   opacity: 0.8;
 }
 
+.songRow__selected {
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+}
+
 .songRow__info {
   margin-left: 20px;
 }
