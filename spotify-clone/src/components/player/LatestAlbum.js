@@ -57,12 +57,6 @@ function LatestAlbum({spotify}) {
         type: "SET_URI", 
         uri: album.uri
       });
-
-      // dispatch({
-      //   type: "SET_PLAYING", 
-      //   playing: true
-      // });
-
     });
   }
 
