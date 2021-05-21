@@ -74,7 +74,12 @@ function Footer() {
               playing: false
             })
           }
-          console.log(state.track);
+          if (state.track) {
+            dispatch({
+              type: "SET_CURRENT_TRACK",
+              current_track: state.track
+            });
+          }
         }}
         play={playing}
         uris={uri ? [uri] : []} 
