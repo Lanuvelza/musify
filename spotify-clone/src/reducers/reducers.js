@@ -10,8 +10,8 @@ export const initialState = {
   album: null,
   albums: null,
   current_playlist: null,
-  playing: false,
   uri: null, 
+  searching: false
 }
 
 const reducer = (state, action) => {
@@ -83,6 +83,11 @@ const reducer = (state, action) => {
         ...state, 
         uri: action.uri
       };
+    case "SET_SEARCHING":
+      return {
+        ...state,
+        searching: action.searching
+      }
     default:
       return state;
   }
