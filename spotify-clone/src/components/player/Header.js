@@ -13,6 +13,11 @@ function Header({ spotify }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    dispatch({
+      type: "SET_SEARCHING",
+      searching: true
+    })
+
     spotify.searchArtists(search)
     .then((results) => {
       console.log(results.artists);
