@@ -1,0 +1,33 @@
+.results__body {
+  height: 325px;
+  margin: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.results__body::-webkit-scrollbar {
+  display: none;
+}
+.results__header {
+  margin: auto;
+}
+
+.results__itemBody {
+  height: 300px;
+  width: 300px;
+  background-color: #121212;
+  border-style: none;
+  border-radius: 25px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+.results__itemInfo {
+  text-align: center;
+  font-size: 25px;
+  text-overflow: ellipsis;
+}
