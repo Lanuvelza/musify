@@ -6,28 +6,27 @@
   overflow-x: scroll;
 }
 
-.results__body::-webkit-scrollbar {
-  display: none;
-}
-.results__header {
-  margin: auto;
-}
-
 .results__itemBody {
-  height: 300px;
-  width: 300px;
-  background-color: #121212;
   border-style: none;
   border-radius: 25px;
-  margin: 20px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.results__itemAvatar {
+  margin: auto;
+  display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
 }
 
 .results__itemInfo {
+  display: inline-block;
+  white-space: nowrap;
+  width: 215px; 
+  margin: auto;
   text-align: center;
   font-size: 25px;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
