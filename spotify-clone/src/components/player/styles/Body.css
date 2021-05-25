@@ -10,6 +10,15 @@
 .body::-webkit-scrollbar {
   display: none;
 }
+
+.searchResults__body {
+  height: 325px;
+  margin: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  overflow-x: scroll;
+}
+
 .body__info {
   display: flex;
   align-items: flex-end;

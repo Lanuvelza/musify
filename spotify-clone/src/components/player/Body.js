@@ -14,15 +14,20 @@ function Body({spotify}) {
   return (
     <div className="body">
       <Header spotify={spotify} />
-      {searching ? <SearchResults artists={artists} /> : null}
+      {searching && 
+      <div className="searchResults__body">
+        {artists.items.map((item) => (
+        <SearchResults artist={item} key={item.id}/>
+      ))}
+      </div>}
       <div className="body__info">
         <div className="body__artistInfo">
-          {artists ? <Artist artist={artists.items[0]} albums={albums} spotify={spotify} /> : null }
-          {albums ? <LatestAlbum spotify={spotify}/>
+          {/* {artists ? <Artist artist={artists.items[0]} albums={albums} spotify={spotify} /> : null } */}
+          {/* {albums ? <LatestAlbum spotify={spotify}/>
           : 
           (current_playlist ? 
           <img src = {playlists.items ? playlists.items[0].images[0].url : null} alt="" /> :
-          <img src = {discover_weekly?.images[0]?.url} alt="" /> )}
+          <img src = {discover_weekly?.images[0]?.url} alt="" /> )} */}
         </div>
         <div className="body__infoText">
           {albums ? null :

@@ -10,34 +10,28 @@ const useStyles = makeStyles({
   }
 })
 
-function SearchResults({artists}) {
+function SearchResults({artist}) {
+
   const classes = useStyles();
 
-  const searchedArtists = artists.items.map(artist => {
-    return (
-      <div key={artist.id} className="results__itemBody">
-        <div className="results__itemAvatar">
-          <Avatar 
-            src={artist.images.length ? artist.images[0].url : null} 
-            alt={artist.name} 
-            className={classes.avatar}
-          />
-        </div>
-        <div className="results__itemInfo">
-          <p>{artist.name}</p>
-        </div>
-      </div>
-    )
-  });
-
-
+  const selectArtist = () => {
+    console.log(artist.id);
+  }
 
   return (
-    <div>
-      <div className="results__body">
-        {searchedArtists}
+    <div key={artist.id} className="results__itemBody">
+      <div className="results__itemAvatar">
+        <Avatar 
+          src={artist.images.length ? artist.images[0].url : null} 
+          alt={artist.name} 
+          className={classes.avatar}
+          onClick={selectArtist}
+        />
       </div>
+    <div className="results__itemInfo">
+      <p>{artist.name}</p>
     </div>
+  </div>
   )
 }
 
