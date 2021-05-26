@@ -24,6 +24,10 @@ function Sidebar({ spotify }) {
       albums: null
     });
     dispatch({
+      type: "SET_ARTIST", 
+      artist: null
+    });
+    dispatch({
       type: 'SET_TRACKS',
       tracks: null
     });
