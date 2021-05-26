@@ -9,25 +9,25 @@ import Artist from "./Artist";
 import SearchResults from "./SearchResults";
 
 function Body({spotify}) {
-  const [{ discover_weekly, playlists, current_playlist, albums, tracks, artists, searching }, dispatch] = useDataLayerValue();
+  const [{ discover_weekly, playlists, current_playlist, albums, tracks, artists, artist, searching }, dispatch] = useDataLayerValue();
 
   return (
     <div className="body">
       <Header spotify={spotify} />
       {searching && 
       <div className="searchResults__body">
-        {artists.items.map((item) => (
-        <SearchResults artist={item} key={item.id}/>
+        {artists?.items?.map((item) => (
+        <SearchResults artist={item} key={item.id} spotify={spotify}/>
       ))}
       </div>}
       <div className="body__info">
         <div className="body__artistInfo">
-          {/* {artists ? <Artist artist={artists.items[0]} albums={albums} spotify={spotify} /> : null } */}
-          {/* {albums ? <LatestAlbum spotify={spotify}/>
+          {artist && <Artist artist={artist} albums={albums} spotify={spotify} />}
+          {albums ? <LatestAlbum spotify={spotify}/>
           : 
           (current_playlist ? 
           <img src = {playlists.items ? playlists.items[0].images[0].url : null} alt="" /> :
-          <img src = {discover_weekly?.images[0]?.url} alt="" /> )} */}
+          <img src = {discover_weekly?.images[0]?.url} alt="" /> )}
         </div>
         <div className="body__infoText">
           {albums ? null :

@@ -13,11 +13,6 @@ function Header({ spotify }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch({
-      type: "SET_SEARCHING",
-      searching: true
-    })
-
     spotify.searchArtists(search)
     .then((results) => {
       console.log(results.artists);
@@ -25,34 +20,21 @@ function Header({ spotify }) {
         type: "SET_ARTISTS",
         artists: results.artists
       });
+    })
+    .then(() => {
 
-      const artist_id = results.artists.items[0].id; 
-      
-      spotify.getArtistAlbums(artist_id, { include_groups: ["single", "album"] })
-      .then((results) => {
-        console.log("artist albums", results);
-        dispatch({
-          type: "SET_ALBUMS", 
-          albums: results
-        });
-      });
-      
-      spotify.getArtistTopTracks(artist_id, "US")
-      .then((results) => {
-        console.log("artist tracks", results);
-        dispatch({
-          type: "SET_TRACKS",
-          tracks: results.tracks
-        });
-      });
+      dispatch({
+        type: "SET_CURRENT_PLAYLIST",
+        current_playlist: null
+      })
+
+      dispatch({
+        type: "SET_SEARCHING", 
+        searching: true
+      })
+
+      setSearch("");
     });
-
-    dispatch({
-      type: "SET_CURRENT_PLAYLIST",
-      current_playlist: null
-    });
-
-    setSearch("");
   }
 
   return (

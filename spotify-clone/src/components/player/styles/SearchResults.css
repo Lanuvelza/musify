@@ -1,11 +1,3 @@
-.results__body {
-  height: 325px;
-  margin: 10px;
-  margin-bottom: 25px;
-  display: flex;
-  overflow-x: scroll;
-}
-
 .results__itemBody {
   border-style: none;
   border-radius: 25px;
@@ -25,6 +17,7 @@
   white-space: nowrap;
   width: 215px; 
   margin: auto;
+  margin-top: -15px;
   text-align: center;
   font-size: 25px;
   overflow: hidden;
