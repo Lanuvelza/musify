@@ -71,9 +71,9 @@ function Body({spotify}) {
       </div>
       {albums && 
       <div className="body__albums">
-        <h1>Albums</h1>
+        <h1>Albums & Singles</h1>
         <div className="body__albumsDisplay">
-           {albums?.items?.map((album) => (
+           {albums?.map((album) => (
            <AlbumsLibrary album={album} key={album.id} spotify={spotify} />
           ))}
         </div>

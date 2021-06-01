@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 
 function Artist({artist, albums, spotify}) {
   const [{}, dispatch] = useDataLayerValue();
-  const props = { backgroundImage: albums ? albums.items[0].images[0].url : artist.images[0].url, backgroundColor: 'pink' }
+  const props = { backgroundImage: albums ? albums[0].images[0].url : artist.images[0].url, backgroundColor: 'pink' }
   const classes = useStyles(props);
 
   const handleClick = () => {

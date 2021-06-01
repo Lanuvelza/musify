@@ -11,17 +11,36 @@ const useStyles = makeStyles({
   }
 })
 
+const filterAblumsByMarket = function(albums, country) {
+  const filteredAlbums = [];
+  const titles = {}; 
+  
+  for(const album of albums) {
+    if(album.available_markets.includes(country) && !titles[album.name]) {
+      titles[album.name] = 1;
+      filteredAlbums.push(album);
+    }
+  }
+  return filteredAlbums; 
+}
+
 function SearchResults({artist, spotify}) {
   const [{}, dispatch] = useDataLayerValue();
 
   const classes = useStyles();
 
   const selectArtist = () => {
-    spotify.getArtistAlbums(artist.id, { include_groups: ["single", "album"] })
+    spotify.getArtistAlbums(artist.id, {include_groups: ["album", "single"], limit: 50})
     .then((results) => {
+
+      console.log(results);
+
+      const albums = filterAblumsByMarket(results.items, "US");
+      console.log(albums);
+
       dispatch({
         type: "SET_ALBUMS", 
-        albums: results
+        albums: albums
       })
     })
     .then(() => {

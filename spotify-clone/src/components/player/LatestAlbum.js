@@ -12,7 +12,7 @@ function LatestAlbum({spotify}) {
   console.log(spotify);
 
   // Sort by latest release date
-  albums.items.sort((a, b) => {
+  albums.sort((a, b) => {
     if (a.release_date < b.release_date) {
       return 1;
     }
@@ -23,7 +23,7 @@ function LatestAlbum({spotify}) {
   })
 
   const handleClick = () => {
-    spotify.getAlbum(albums.items[0].id)
+    spotify.getAlbum(albums[0].id)
     .then((album) => {
       console.log(album);
       console.log(album.tracks);
@@ -39,7 +39,7 @@ function LatestAlbum({spotify}) {
   }
 
   const playAlbum = () => {
-    spotify.getAlbum(albums.items[0].id)
+    spotify.getAlbum(albums[0].id)
     .then((album) => {
       console.log(album);
       console.log(album.tracks);
@@ -64,14 +64,14 @@ function LatestAlbum({spotify}) {
     <div className="latestalbum__info">
       {albums ? 
       <img 
-        src={albums.items[0].images[0].url} 
+        src={albums[0].images[0].url} 
         onClick={handleClick}
       /> : null}
       <div className="latestalbum__infoText">
         {albums ? 
         <>
           <h1><strong>Latest Release</strong></h1>
-          <h2 onClick={handleClick} >{albums.items[0].name}</h2>
+          <h2 onClick={handleClick} >{albums[0].name}</h2>
           <PlayCircleFilled className={"latestalbum__playButton"} onClick={playAlbum} />
         </> : null }
       </div>
