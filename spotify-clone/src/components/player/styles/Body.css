@@ -58,5 +58,24 @@
 }
 .body__songs {
   margin: 20px -30px;
+  margin-bottom: 25px;
+}
+
+.body__albums {
+  display: flex;
+  flex-direction: column;
+}
+
+.body__albums > h1 {  
+  margin-left: 20px;
+  margin-bottom: -10px;
+}
+.body__albumsDisplay {
+  /* height: 425px; */
+  display: flex;
+  overflow-x: scroll;
+  margin: 20px -20px;
   margin-bottom: 85px;
+  padding: 30px;
+  background: none;
 }

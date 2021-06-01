@@ -10,7 +10,7 @@ export const initialState = {
   artists: null,
   album: null,
   albums: null,
-  current_playlist: null,
+  // current_playlist: null,
   uri: null, 
   searching: false
 }

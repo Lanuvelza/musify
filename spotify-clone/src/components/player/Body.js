@@ -7,6 +7,7 @@ import SongRow from "./SongRow";
 import LatestAlbum from "./LatestAlbum";
 import Artist from "./Artist";
 import SearchResults from "./SearchResults";
+import Albums from "./Albums";
 
 function Body({spotify}) {
   const [{ discover_weekly, playlists, current_playlist, albums, tracks, artists, artist, searching }, dispatch] = useDataLayerValue();
@@ -23,14 +24,15 @@ function Body({spotify}) {
       <div className="body__info">
         <div className="body__artistInfo">
           {artist && <Artist artist={artist} albums={albums} spotify={spotify} />}
-          {albums ? <LatestAlbum spotify={spotify}/>
+          {albums && <LatestAlbum spotify={spotify} /> }
+          {/* {albums ? <LatestAlbum spotify={spotify}/>
           : 
           (current_playlist ? 
           <img src = {playlists.items ? playlists.items[0].images[0].url : null} alt="" /> :
-          <img src = {discover_weekly?.images[0]?.url} alt="" /> )}
+          <img src = {discover_weekly?.images[0]?.url} alt="" /> )} */}
         </div>
         <div className="body__infoText">
-          {albums ? null :
+          {/* {albums ? null :
           
           (current_playlist ? 
           <>
@@ -44,7 +46,7 @@ function Body({spotify}) {
             <p>{discover_weekly?.description}</p>
           </>
           )
-          }
+          } */}
         </div>
       </div>
       <div className="body__songs">
@@ -53,7 +55,10 @@ function Body({spotify}) {
           <Favorite fontSize="large" />
           <MoreHoriz />
         </div>
-        {tracks ? tracks.map((track) => (
+        {tracks && tracks.map((track) => (
+          <SongRow track={track} key={track.id} />
+        ))}
+        {/* {tracks ? tracks.map((track) => (
           <SongRow track={track} key={track.id} />
         )): 
         (current_playlist ? 
@@ -62,9 +67,18 @@ function Body({spotify}) {
           )) : 
           discover_weekly?.tracks.items.map((item) => (
             <SongRow track={item.track} key={item.track.id} />
-          )))}
-      
+          )))} */}
       </div>
+      {albums && 
+      <div className="body__albums">
+        <h1>Albums</h1>
+        <div className="body__albumsDisplay">
+           {albums?.items?.map((album) => (
+           <Albums album={album} key={album.id} spotify={spotify} />
+          ))}
+        </div>
+      </div>
+      }
     </div>
   );
 }

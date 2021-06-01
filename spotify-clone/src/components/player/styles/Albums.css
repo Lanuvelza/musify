@@ -1,0 +1,26 @@
+.album__cover {
+  margin-bottom: 10px;
+}
+
+.album__cover > img {
+  height: 15vw;
+  margin: 0 20px;
+  border-radius: 15px 40px 15px;
+  /* box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); */
+}
+
+.album__body:hover {
+  cursor: pointer;
+  transition: 100ms transform ease-in; 
+  transform: scale(1.12);
+}
+
+.album__Info {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  color: lightsteelblue;
+  text-align: center;
+  margin: auto;
+}
+
