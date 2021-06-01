@@ -7,7 +7,7 @@ import SongRow from "./SongRow";
 import LatestAlbum from "./LatestAlbum";
 import Artist from "./Artist";
 import SearchResults from "./SearchResults";
-import Albums from "./Albums";
+import AlbumsLibrary from "./AlbumsLibrary";
 
 function Body({spotify}) {
   const [{ discover_weekly, playlists, current_playlist, albums, tracks, artists, artist, searching }, dispatch] = useDataLayerValue();
@@ -74,7 +74,7 @@ function Body({spotify}) {
         <h1>Albums</h1>
         <div className="body__albumsDisplay">
            {albums?.items?.map((album) => (
-           <Albums album={album} key={album.id} spotify={spotify} />
+           <AlbumsLibrary album={album} key={album.id} spotify={spotify} />
           ))}
         </div>
       </div>

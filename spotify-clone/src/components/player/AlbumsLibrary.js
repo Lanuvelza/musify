@@ -1,9 +1,9 @@
 import React from 'react'; 
 import { useDataLayerValue } from '../../contexts/DataLayer';
-import "./styles/Albums.css";
+import "./styles/AlbumsLibrary.css";
 
 
-function Albums({album, spotify}) {
+function AlbumsLibrary({album, spotify}) {
   const [{}, dispatch] = useDataLayerValue();
   
   const selectAlbum = () => {
@@ -37,4 +37,4 @@ function Albums({album, spotify}) {
   )
 }
 
-export default Albums; 
+export default AlbumsLibrary; 
