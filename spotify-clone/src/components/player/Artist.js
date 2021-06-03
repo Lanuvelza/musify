@@ -46,6 +46,11 @@ function Artist({artist, albums, spotify}) {
           type: "SET_TRACKS",
           tracks: results.tracks
         });
+
+        dispatch({
+          type: "SET_ALBUM",
+          album: null
+        })
     });
   }
 

@@ -4,13 +4,13 @@ import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons";
 import { useDataLayerValue } from "../../contexts/DataLayer";
 import Header from "./Header";
 import SongRow from "./SongRow";
-import LatestAlbum from "./LatestAlbum";
+import Album from "./Album";
 import Artist from "./Artist";
 import SearchResults from "./SearchResults";
 import AlbumsLibrary from "./AlbumsLibrary";
 
 function Body({spotify}) {
-  const [{ discover_weekly, playlists, current_playlist, albums, tracks, artists, artist, searching }, dispatch] = useDataLayerValue();
+  const [{ discover_weekly, playlists, current_playlist, albums, album, tracks, artists, artist, searching }, dispatch] = useDataLayerValue();
 
   return (
     <div className="body">
@@ -24,7 +24,7 @@ function Body({spotify}) {
       <div className="body__info">
         <div className="body__artistInfo">
           {artist && <Artist artist={artist} albums={albums} spotify={spotify} />}
-          {albums && <LatestAlbum spotify={spotify} /> }
+          {album ? <Album album={album} spotify={spotify} /> : albums && <Album album={albums[0]} spotify={spotify} />}
           {/* {albums ? <LatestAlbum spotify={spotify}/>
           : 
           (current_playlist ? 
@@ -50,11 +50,11 @@ function Body({spotify}) {
         </div>
       </div>
       <div className="body__songs">
-        <div className="body__icons">
+        {/* <div className="body__icons">
           <PlayCircleFilled className="body__shuffle" />
           <Favorite fontSize="large" />
           <MoreHoriz />
-        </div>
+        </div> */}
         {tracks && tracks.map((track) => (
           <SongRow track={track} key={track.id} />
         ))}

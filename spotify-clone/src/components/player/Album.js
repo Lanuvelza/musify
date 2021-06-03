@@ -2,28 +2,15 @@ import { Grid } from "@material-ui/core";
 import { AlbumSharp, DragHandle, PlayCircleFilled } from "@material-ui/icons";
 import React from "react"; 
 import { useDataLayerValue } from "../../contexts/DataLayer"; 
-import "./styles/LatestAlbum.css"; 
+import "./styles/Album.css"; 
 
 
 
-function LatestAlbum({spotify}) {
+function Album({album, spotify}) {
   const [{albums}, dispatch] = useDataLayerValue(); 
-  console.log(albums);
-  console.log(spotify);
-
-  // Sort by latest release date
-  albums.sort((a, b) => {
-    if (a.release_date < b.release_date) {
-      return 1;
-    }
-    if (a.release_date > b.release_date) {
-      return -1;
-    }
-    return 0;
-  })
 
   const handleClick = () => {
-    spotify.getAlbum(albums[0].id)
+    spotify.getAlbum(album.id)
     .then((album) => {
       console.log(album);
       console.log(album.tracks);
@@ -39,7 +26,7 @@ function LatestAlbum({spotify}) {
   }
 
   const playAlbum = () => {
-    spotify.getAlbum(albums[0].id)
+    spotify.getAlbum(album.id)
     .then((album) => {
       console.log(album);
       console.log(album.tracks);
@@ -61,22 +48,22 @@ function LatestAlbum({spotify}) {
   }
 
   return (
-    <div className="latestalbum__info">
-      {albums ? 
-      <img 
-        src={albums[0].images[0].url} 
-        onClick={handleClick}
-      /> : null}
-      <div className="latestalbum__infoText">
-        {albums ? 
+    <div className="album__info">
+      {album && <img src={album.images[0].url} onClick={handleClick}/>}
+      <div className="album__infoText">
+        {album.id === albums[0].id ? 
         <>
           <h1><strong>Latest Release</strong></h1>
-          <h2 onClick={handleClick} >{albums[0].name}</h2>
-          <PlayCircleFilled className={"latestalbum__playButton"} onClick={playAlbum} />
-        </> : null }
+          <h2 onClick={handleClick}>{album.name}</h2>
+          <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
+        </> : 
+        <>
+          <h2 onClick={handleClick}>{album.name}</h2>
+          <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
+        </>}
       </div>
     </div>
   );
 }
 
-export default LatestAlbum; 
+export default Album; 

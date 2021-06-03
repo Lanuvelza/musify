@@ -30,6 +30,7 @@ function SearchResults({artist, spotify}) {
   const classes = useStyles();
 
   const selectArtist = () => {
+
     spotify.getArtistAlbums(artist.id, {include_groups: ["album", "single"], limit: 50})
     .then((results) => {
 
@@ -61,6 +62,11 @@ function SearchResults({artist, spotify}) {
       dispatch({
         type: "SET_SEARCHING",
         searching: false
+      })
+
+      dispatch({
+        type: "SET_ALBUM", 
+        album: null
       })
     });
   }
