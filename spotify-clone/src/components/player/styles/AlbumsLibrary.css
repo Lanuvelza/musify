@@ -11,7 +11,7 @@
 
 .album__cover:hover {
   cursor: pointer;
-  transition: 100ms transform ease-in; 
+  transition: 200ms transform ease-in; 
   transform: scale(1.12);
 }
 
