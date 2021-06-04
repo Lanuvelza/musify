@@ -9,18 +9,31 @@
   /* box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); */
 }
 
-.album__body:hover {
+.album__cover:hover {
   cursor: pointer;
   transition: 100ms transform ease-in; 
   transform: scale(1.12);
 }
 
+.album__cover:hover + .album__Info {
+  animation: fade-in 0.4s;
+  opacity: 1;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  25% {opacity: 0.25;}
+  50% {opacity: 0.5;}
+  75% {opacity: 0.75;}
+  100% {opacity: 1;}
+}
+
+
 .album__Info {
   width: 15vw;
-  display: flex;
-  flex-direction: column;
   color: lightsteelblue;
   text-align: center;
-  margin: auto;
+  margin: 20px 20px 20px;
+  opacity: 0;
 }
 
