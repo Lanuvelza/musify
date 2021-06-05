@@ -20,6 +20,10 @@ function Sidebar({ spotify }) {
       albums: null
     });
     dispatch({
+      type: 'SET_ALBUM',
+      album: null
+    });
+    dispatch({
       type: 'SET_ARTISTS',
       albums: null
     });

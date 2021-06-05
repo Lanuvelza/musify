@@ -17,9 +17,9 @@ function Body({spotify}) {
       <Header spotify={spotify} />
       {searching && 
       <div className="searchResults__body">
-        {artists?.items?.map((item) => (
+        {artists.items.length ? artists?.items?.map((item) => (
         <SearchResults artist={item} key={item.id} spotify={spotify}/>
-      ))}
+      )): <h2>No such artist found. Try another artist...</h2>}
       </div>}
       <div className="body__info">
         <div className="body__artistInfo">
