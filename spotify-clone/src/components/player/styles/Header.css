@@ -21,7 +21,7 @@
 
 .header__left__searchbar > form > input {
   border: none;
-  width: 350px;
+  width: 400px;
   font-size: 20px;
 }
 
@@ -32,6 +32,8 @@ input:focus {
 .header__right {
   display: flex;
   align-items: center;
+  position: fixed; 
+  right: 15px;
 }
 
 .header__right > h4 {
