@@ -3,7 +3,7 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 import "./styles/SidebarOption.css"
 
 
-function SidebarOption({spotify, title, Icon, id}) {
+function SidebarOption({spotify, title, Icon, id, handleClick}) {
   const [{}, dispatch] = useDataLayerValue();
 
   const changePlaylist = (id) => {
@@ -31,7 +31,7 @@ function SidebarOption({spotify, title, Icon, id}) {
   return (
     <div className="sidebarOption">
       {Icon && <Icon className="sidebarOption__icon" />}
-      {Icon ? <h4>{title}</h4> : <p onClick={() => {changePlaylist(id)}}>{title}</p>}
+      {Icon ? <h4 onClick={handleClick}>{title}</h4> : <p onClick={() => {changePlaylist(id)}}>{title}</p>}
     </div>
   );
 }

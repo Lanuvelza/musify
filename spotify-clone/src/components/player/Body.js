@@ -10,14 +10,23 @@ import SearchResults from "./SearchResults";
 import AlbumsLibrary from "./AlbumsLibrary";
 
 function Body({spotify}) {
-  const [{ discover_weekly, playlists, current_playlist, albums, album, tracks, artists, artist, searching }, dispatch] = useDataLayerValue();
+  const [{ 
+    discover_weekly, 
+    playlists, 
+    current_playlist, 
+    albums, 
+    album, 
+    tracks, 
+    artists, 
+    artist, 
+    searching }, dispatch] = useDataLayerValue();
 
   return (
     <div className="body">
       <Header spotify={spotify} />
       {searching && 
       <div className="searchResults__body">
-        {artists.items.length ? artists?.items?.map((item) => (
+        {artists?.items?.length ? artists?.items?.map((item) => (
         <SearchResults artist={item} key={item.id} spotify={spotify}/>
       )): <h2>No such artist found. Try another artist...</h2>}
       </div>}

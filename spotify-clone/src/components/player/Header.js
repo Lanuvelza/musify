@@ -7,7 +7,7 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 
 function Header({ spotify }) {
   console.log(spotify);
-  const [{ user }, dispatch] = useDataLayerValue(); 
+  const [{ user, searchmode }, dispatch] = useDataLayerValue(); 
   const [search, setSearch] = useState("");
 
   const handleSubmit = (event) => {
@@ -39,8 +39,10 @@ function Header({ spotify }) {
 
   return (
     <div className="header">
-      <div className="header__left">
-         <Search className="header__left__searchIcon"/>
+      <div className={searchmode ? "header__left__searchbar" : "header__left"}>
+        {searchmode && 
+        <>
+        <Search className="header__left__searchIcon"/>
         <form onSubmit={handleSubmit}>
          <input 
           placeholder="Search for an Artist..." 
@@ -49,6 +51,8 @@ function Header({ spotify }) {
           onChange={(e) => {setSearch(e.target.value)}}
         />
         </form>
+        </>}
+        
       </div>
       <div className="header__right">
         <Avatar src={user?.images[0]?.url} alt={user?.display_name} />

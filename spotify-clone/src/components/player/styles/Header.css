@@ -4,7 +4,7 @@
   margin-bottom: 30px;
 }
 
-.header__left {
+.header__left__searchbar {
   background-color: white;
   color: gray;
   min-width: 70px;
@@ -19,7 +19,7 @@
   margin: 5px;
 }
 
-.header__left > form > input {
+.header__left__searchbar > form > input {
   border: none;
   width: 350px;
   font-size: 20px;
