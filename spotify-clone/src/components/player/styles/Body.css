@@ -1,4 +1,4 @@
-
+/* 
 .body {
   height: 100vh;
   flex: 0.8;
@@ -9,7 +9,7 @@
 }
 .body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .searchResults__body {
   height: 325px;

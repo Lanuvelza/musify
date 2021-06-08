@@ -23,7 +23,7 @@ function Body({spotify}) {
 
   return (
     <div className="body">
-      <Header spotify={spotify} />
+      {/* <Header spotify={spotify} /> */}
       {searching && 
       <div className="searchResults__body">
         {artists?.items?.length ? artists?.items?.map((item) => (
@@ -58,6 +58,7 @@ function Body({spotify}) {
           } */}
         </div>
       </div>
+      <hr />
       <div className="body__songs">
         {/* <div className="body__icons">
           <PlayCircleFilled className="body__shuffle" />

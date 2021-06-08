@@ -1,8 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
-}
+}  
 
 .header__left__searchbar {
   background-color: white;
@@ -33,7 +32,7 @@ input:focus {
   display: flex;
   align-items: center;
   position: fixed; 
-  right: 15px;
+  right: 25px;
 }
 
 .header__right > h4 {
