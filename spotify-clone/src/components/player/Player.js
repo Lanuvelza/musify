@@ -4,8 +4,11 @@ import Sidebar from "./Sidebar";
 import Body from "./Body";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 
 function Player({ spotify }) {
+  const [{view}, viewDispatch] = useViewDataLayerValue();
+
   return (
   <div className="player">
     <div className="player__body">
@@ -14,7 +17,7 @@ function Player({ spotify }) {
         <div className="main__header">
           <Header spotify={spotify} />
         </div>
-        <Body spotify={spotify} />
+        {view === "SPOTIFY" && <Body spotify={spotify} /> }
       </div>
     </div>
     <Footer />

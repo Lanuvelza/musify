@@ -5,10 +5,12 @@ import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search"; 
 import { LibraryMusic } from "@material-ui/icons"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
+import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 
 
 function Sidebar({ spotify }) {
   const [{ playlists, searchmode}, dispatch] = useDataLayerValue();
+  const [{}, viewDispatch] = useViewDataLayerValue();
 
   const toggleHome = () => {
     dispatch({
@@ -35,6 +37,10 @@ function Sidebar({ spotify }) {
       type: 'SET_TRACKS',
       tracks: null
     });
+    viewDispatch({
+      type: "SET_VIEW",
+      view: null
+    });
   }
 
   const toggleSearch = () => {
@@ -42,6 +48,14 @@ function Sidebar({ spotify }) {
     dispatch({
       type: "SET_SEARCH_MODE",
       searchmode: !searchmode
+    });
+  }
+
+  const toggleSpotify = () => {
+    console.log("Spotify");
+    viewDispatch({
+      type: "SET_VIEW",
+      view: "SPOTIFY"
     });
   }
 
@@ -56,7 +70,7 @@ function Sidebar({ spotify }) {
 
       <SidebarOption title="Home" Icon={HomeIcon} handleClick={toggleHome} />
       <SidebarOption title="Search" Icon={SearchIcon} handleClick={toggleSearch} />
-      <SidebarOption title="Your Library" Icon={LibraryMusic} />
+      <SidebarOption title="Spotify" Icon={LibraryMusic} handleClick={toggleSpotify} />
       <br /> 
       {/* <strong className="sidebar_title">PLAYLISTS</strong>
       <hr /> 

@@ -58,7 +58,7 @@ function Body({spotify}) {
           } */}
         </div>
       </div>
-      <hr />
+      {tracks && <hr />}
       <div className="body__songs">
         {/* <div className="body__icons">
           <PlayCircleFilled className="body__shuffle" />
