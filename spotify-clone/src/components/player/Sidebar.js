@@ -58,7 +58,7 @@ function Sidebar({ spotify }) {
       <SidebarOption title="Search" Icon={SearchIcon} handleClick={toggleSearch} />
       <SidebarOption title="Your Library" Icon={LibraryMusic} />
       <br /> 
-      <strong className="sidebar_title">PLAYLISTS</strong>
+      {/* <strong className="sidebar_title">PLAYLISTS</strong>
       <hr /> 
       {playlists?.items?.map((playlist) => (
         <SidebarOption 
@@ -67,7 +67,7 @@ function Sidebar({ spotify }) {
           key={playlist.id} 
           id={playlist.id}
         />
-      ))}
+      ))} */}
     </div>
   );
 }

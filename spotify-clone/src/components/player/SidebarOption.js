@@ -29,9 +29,9 @@ function SidebarOption({spotify, title, Icon, id, handleClick}) {
   }
 
   return (
-    <div className="sidebarOption">
+    <div className="sidebarOption" onClick={handleClick}>
       {Icon && <Icon className="sidebarOption__icon" />}
-      {Icon ? <h4 onClick={handleClick}>{title}</h4> : <p onClick={() => {changePlaylist(id)}}>{title}</p>}
+      {Icon ? <h4>{title}</h4> : <p onClick={() => {changePlaylist(id)}}>{title}</p>}
     </div>
   );
 }
