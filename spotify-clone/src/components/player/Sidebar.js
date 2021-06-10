@@ -61,6 +61,22 @@ function Sidebar({ spotify }) {
     });
   }
 
+  const toggleYouTube = () => {
+    console.log("Youtube");
+    viewDispatch({
+      type: "SET_VIEW", 
+      view: "YOUTUBE"
+    })
+  }
+
+  const toggleInstagram = () => {
+    console.log("Instagram");
+    viewDispatch({
+      type: "SET_VIEW",
+      view: "INSTAGRAM"
+    })
+  }
+
   return (
     <div className="sidebar">
       <img 
@@ -73,8 +89,8 @@ function Sidebar({ spotify }) {
       <SidebarOption title="Home" Icon={HomeIcon} handleClick={toggleHome} />
       <SidebarOption title="Search" Icon={SearchIcon} handleClick={toggleSearch} />
       <SidebarOption title="Spotify" Icon={LibraryMusic} handleClick={toggleSpotify} />
-      <SidebarOption title="Youtube" Icon={YouTubeIcon} />
-      <SidebarOption title="Instagram" Icon={InstagramIcon} />
+      <SidebarOption title="Youtube" Icon={YouTubeIcon} handleClick={toggleYouTube} />
+      <SidebarOption title="Instagram" Icon={InstagramIcon} handleClick={toggleInstagram} />
       <br /> 
       {/* <strong className="sidebar_title">PLAYLISTS</strong>
       <hr /> 
