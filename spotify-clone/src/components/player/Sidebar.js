@@ -3,6 +3,8 @@ import "./styles/Sidebar.css"
 import SidebarOption from "./SidebarOption";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search"; 
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import InstagramIcon from '@material-ui/icons/Instagram';
 import { LibraryMusic } from "@material-ui/icons"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
 import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
@@ -71,6 +73,8 @@ function Sidebar({ spotify }) {
       <SidebarOption title="Home" Icon={HomeIcon} handleClick={toggleHome} />
       <SidebarOption title="Search" Icon={SearchIcon} handleClick={toggleSearch} />
       <SidebarOption title="Spotify" Icon={LibraryMusic} handleClick={toggleSpotify} />
+      <SidebarOption title="Youtube" Icon={YouTubeIcon} />
+      <SidebarOption title="Instagram" Icon={InstagramIcon} />
       <br /> 
       {/* <strong className="sidebar_title">PLAYLISTS</strong>
       <hr /> 
