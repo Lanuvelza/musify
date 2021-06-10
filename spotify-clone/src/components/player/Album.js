@@ -55,12 +55,21 @@ function Album({album, spotify}) {
         <>
           <h1><strong>Latest Release</strong></h1>
           <h2 onClick={handleClick}>{album.name}</h2>
-          <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
+          <div className="album__play">
+            <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
+            <div className="album__playMessage">
+              <h2>Play Album</h2>
+            </div>
+          </div>
         </> : 
         <>
           <h2 onClick={handleClick}>{album.name}</h2>
-          <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
-        </>}
+          <div className="album__play">
+            <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
+            <div className="album__playMessage">
+              <h2>Play Album</h2>
+            </div>
+          </div>        </>}
       </div>
     </div>
   );

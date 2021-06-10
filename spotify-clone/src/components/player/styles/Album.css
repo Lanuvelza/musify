@@ -32,6 +32,18 @@ img:hover {
   color: pink;
 }
 
+.album__play {
+  display: flex;
+  align-items: center;
+}
+
+.album__playMessage {
+  /* color: lightsteelblue; */
+  opacity: 0;
+  margin-left: 8px;
+  font-size: 20px;
+}
+
 .album__playButton {
   font-size: 100px !important; 
 }
@@ -40,5 +52,20 @@ img:hover {
   transition: 100ms transform ease-in;
   transform: scale(1.08);
 }
+
+.album__playButton:hover + .album__playMessage {
+  animation: fade-in 0.4s; 
+  opacity: 1;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  25% {opacity: 0.25;}
+  50% {opacity: 0.5;}
+  75% {opacity: 0.75;}
+  100% {opacity: 1;}
+}
+
+
 
 
