@@ -15,30 +15,30 @@ function Sidebar({ spotify }) {
   const [{}, viewDispatch] = useViewDataLayerValue();
 
   const toggleHome = () => {
-    dispatch({
-      type: "SET_CURRENT_PLAYLIST",
-      current_playlist: null
-    });
-    dispatch({
-      type: 'SET_ALBUMS',
-      albums: null
-    });
-    dispatch({
-      type: 'SET_ALBUM',
-      album: null
-    });
-    dispatch({
-      type: 'SET_ARTISTS',
-      albums: null
-    });
-    dispatch({
-      type: "SET_ARTIST", 
-      artist: null
-    });
-    dispatch({
-      type: 'SET_TRACKS',
-      tracks: null
-    });
+    // dispatch({
+    //   type: "SET_CURRENT_PLAYLIST",
+    //   current_playlist: null
+    // });
+    // dispatch({
+    //   type: 'SET_ALBUMS',
+    //   albums: null
+    // });
+    // dispatch({
+    //   type: 'SET_ALBUM',
+    //   album: null
+    // });
+    // dispatch({
+    //   type: 'SET_ARTISTS',
+    //   albums: null
+    // });
+    // dispatch({
+    //   type: "SET_ARTIST", 
+    //   artist: null
+    // });
+    // dispatch({
+    //   type: 'SET_TRACKS',
+    //   tracks: null
+    // });
     viewDispatch({
       type: "SET_VIEW",
       view: null

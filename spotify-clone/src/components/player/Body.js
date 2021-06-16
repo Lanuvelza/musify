@@ -24,12 +24,12 @@ function Body({spotify}) {
   return (
     <div className="body">
       {/* <Header spotify={spotify} /> */}
-      {searching && 
+      {/* {searching && 
       <div className="searchResults__body">
         {artists?.items?.length ? artists?.items?.map((item) => (
         <SearchResults artist={item} key={item.id} spotify={spotify}/>
       )): <h2>No such artist found. Try another artist...</h2>}
-      </div>}
+      </div>} */}
       <div className="body__info">
         <div className="body__artistInfo">
           {artist && <Artist artist={artist} albums={albums} spotify={spotify} />}
