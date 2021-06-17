@@ -3,6 +3,7 @@ import { Search } from "@material-ui/icons";
 import "./styles/Header.css";
 import { Avatar } from "@material-ui/core"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
+import { searchChannels } from "../youtube/youtube";
 
 
 function Header({ spotify }) {
@@ -12,6 +13,11 @@ function Header({ spotify }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    searchChannels(search)
+    .then((results) => {
+      console.log(results);
+    })
 
     spotify.searchArtists(search)
     .then((results) => {
