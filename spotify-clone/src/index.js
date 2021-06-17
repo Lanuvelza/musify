@@ -7,12 +7,16 @@ import { DataLayer } from './contexts/DataLayer';
 import reducer, { initialState } from './reducers/reducers';
 import { ViewDataLayer } from './contexts/ViewDataLayer';
 import viewReducer, { initialViewState } from './reducers/viewReducer';
+import { YoutubeDataLayer } from './contexts/YoutubeDataLayer';
+import youtubeReducer, { initialYoutubeDataState } from './reducers/youtubeReducer';
 
 ReactDOM.render(
   <React.StrictMode>
     <DataLayer initialState={initialState} reducer={reducer}>
       <ViewDataLayer initialState={initialViewState} reducer={viewReducer}>
-        <App />
+        <YoutubeDataLayer initialState={initialYoutubeDataState} reducer={youtubeReducer}>
+          <App />
+        </YoutubeDataLayer>
       </ViewDataLayer>
     </DataLayer>
   </React.StrictMode>,

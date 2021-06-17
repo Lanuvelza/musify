@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
-const YoutubeDataLayerContext = createContext(); 
+export const YoutubeDataLayerContext = createContext(); 
 
-const YoutubeDataLayer = ({ initialState, reducer, children }) => (
+export const YoutubeDataLayer = ({ initialState, reducer, children }) => (
   <YoutubeDataLayerContext.Provider value={useReducer(reducer, initialState)} >
     {children}
   </YoutubeDataLayerContext.Provider>
