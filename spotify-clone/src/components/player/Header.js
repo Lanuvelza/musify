@@ -3,12 +3,14 @@ import { Search } from "@material-ui/icons";
 import "./styles/Header.css";
 import { Avatar } from "@material-ui/core"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
-import { searchChannels } from "../youtube/youtube";
+import { filterChannelsByVisibleSubscriberCount, searchChannels, sortChannelsBySubscriberCount } from "../youtube/youtube";
+import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
 
 
 function Header({ spotify }) {
   console.log(spotify);
   const [{ user, searchmode }, dispatch] = useDataLayerValue(); 
+  const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
   const [search, setSearch] = useState("");
 
   const handleSubmit = (event) => {
@@ -17,6 +19,14 @@ function Header({ spotify }) {
     searchChannels(search)
     .then((results) => {
       console.log(results);
+
+      const OrderedChannels = sortChannelsBySubscriberCount(filterChannelsByVisibleSubscriberCount(results));
+      console.log(OrderedChannels);
+
+      youtubeDispatch({
+        type: "SET_CHANNELS",
+        channels: OrderedChannels
+      })
     })
 
     spotify.searchArtists(search)
