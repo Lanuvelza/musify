@@ -1,0 +1,11 @@
+.latestvideo__body {
+  width: 46vw;
+  height: 30vh;
+  /* margin-top: 20px; */
+  margin: 20px;
+  margin-left: 5px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+}

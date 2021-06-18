@@ -9,6 +9,7 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 import SearchResults from "./SearchResults";
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
 import YoutubeSearchResults from "./YoutubeSearchResults";
+import YoutubeBody from "../youtube-components/YoutubeBody";
 
 function Player({ spotify }) {
   const [{searching, artists}, dispatch] = useDataLayerValue();
@@ -39,6 +40,7 @@ function Player({ spotify }) {
 
         </div>
         {view === "SPOTIFY" && <Body spotify={spotify} /> }
+        {view === "YOUTUBE" && <YoutubeBody /> }
       </div>
     </div>
     <Footer />

@@ -13,9 +13,17 @@ const useStyles = makeStyles({
 
 
 function YoutubeSearchResults({channel}) {
-  const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
+  const [{channels}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const classes = useStyles(); 
+
+  const selectChannel = () => {
+    console.log(channel);
+    youtubeDispatch({
+      type: "SET_CHANNEL",
+      channel: channel
+    })
+  }
 
 
   return (
@@ -25,6 +33,7 @@ function YoutubeSearchResults({channel}) {
         src={channel.snippet.thumbnails.high.url}
         alt={channel.snippet.channelTitle}
         className={classes.avatar}
+        onClick={selectChannel}
       />
       </div>
       <div className="results__channelTitle">
