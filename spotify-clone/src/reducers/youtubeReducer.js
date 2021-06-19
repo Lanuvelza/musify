@@ -2,7 +2,8 @@ export const initialYoutubeDataState = {
   channels: null, 
   channel: null, 
   videos: null,
-  video: null
+  video: null,
+  latest__video: null,
 }
 
 const youtubeReducer = (state, action) => {
@@ -29,6 +30,11 @@ const youtubeReducer = (state, action) => {
         ...state,
         video: action.video
       };
+    case "SET_LATEST_VIDEO": 
+      return {
+        ...state, 
+        latest__video: action.latest__video
+      }
     default:
       return state;
   }

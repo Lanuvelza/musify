@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles } from "@material-ui/core";
 import "./styles/YoutubeSearchResults.css";
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
+import { getChannelVideos } from '../youtube/youtube';
 
 const useStyles = makeStyles({
   avatar: {
@@ -22,6 +23,24 @@ function YoutubeSearchResults({channel}) {
     youtubeDispatch({
       type: "SET_CHANNEL",
       channel: channel
+    })
+    
+    getChannelVideos(channel)
+    .then(response => {
+
+      const videos = response;
+      const latestVideo = response[0];
+      console.log(response);
+      youtubeDispatch({
+        type: "SET_VIDEOS",
+        videos: videos
+      })
+
+      youtubeDispatch({
+        type: "SET_LATEST_VIDEO", 
+        latest_video: latestVideo
+      })
+
     })
   }
 

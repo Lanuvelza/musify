@@ -3,6 +3,7 @@ const api_key = process.env.REACT_APP_YOUTUBE_API_KEY;
 const baseURL = 'https://www.googleapis.com/youtube/v3';
 
 
+// sort channels by the number of suscribers in descending order
 export const sortChannelsBySubscriberCount = (channels) => {
   const sortedChannels =  channels.sort((a,b) => {
     if (Number(a.statistics.subscriberCount) < Number(b.statistics.subscriberCount)) {
@@ -16,11 +17,12 @@ export const sortChannelsBySubscriberCount = (channels) => {
   return sortedChannels;
 }
 
+// filter channels that show suscriber count only 
 export const filterChannelsByVisibleSubscriberCount = (channels) => {
   return channels.filter((channel) => channel.statistics.hiddenSubscriberCount === false);
 }
 
-
+// searches channels based on the query term 
 export const searchChannels = (name) => {
   return axios.get(`${baseURL}/search?key=${api_key}&q=${name}&type=channel&part=snippet&maxResults=25`)
   .then(response => {
@@ -59,6 +61,37 @@ export const searchChannels = (name) => {
   });
 }
 
+// retrieves all the videos from a channel
+export const getChannelVideos = async (channel) => {
+
+  const uploadID = channel.contentDetails.relatedPlaylists.uploads;
+
+  const response = await axios.get(`${baseURL}/playlistItems?part=snippet,contentDetails&playlistId=${uploadID}&maxResults=50&key=${api_key}`);
+
+  const results = response.data;
+  let pageToken = results.nextPageToken; 
+
+
+  const allVideos = [];
+
+  results.items.map(item => {
+    allVideos.push(item);
+  })
+
+  while (pageToken) {
+    const nextPageResponse = await axios.get(`${baseURL}/playlistItems?part=snippet,contentDetails&playlistId=${uploadID}&maxResults=50&key=${api_key}&pageToken=${pageToken}`)
+    const nextPageResults = nextPageResponse.data.items;
+
+    nextPageResults.map((item) => {
+      allVideos.push(item);
+    });
+ 
+    pageToken = nextPageResponse.data.nextPageToken; 
+
+  }
+
+  return allVideos;
+}
 
 
 

@@ -31,7 +31,7 @@ input:focus {
 .header__right {
   display: flex;
   align-items: center;
-  position: fixed; 
+  /* position: fixed;  */
   right: 25px;
 }
 
