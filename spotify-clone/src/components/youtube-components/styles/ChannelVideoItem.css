@@ -1,0 +1,12 @@
+.videoitem__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 15px;
+}
+
+.videoitem__body > img {
+  height: 30vh;
+  width: 40vh;
+}

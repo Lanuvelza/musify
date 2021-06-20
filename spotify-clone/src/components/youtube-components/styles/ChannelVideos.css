@@ -7,3 +7,9 @@
   background: linear-gradient(to bottom, rgba(5,4,4, 0.2) 20%, transparent 60%);
   color: lightsteelblue;
 }
+
+.channelvideo__library {
+  display: flex;
+  /* flex-wrap: wrap; */
+  overflow-x: auto;
+}
