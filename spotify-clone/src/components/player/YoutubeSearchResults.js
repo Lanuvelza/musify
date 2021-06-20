@@ -38,7 +38,7 @@ function YoutubeSearchResults({channel}) {
 
       youtubeDispatch({
         type: "SET_LATEST_VIDEO", 
-        latest_video: latestVideo
+        latest__video: latestVideo
       })
 
     })
