@@ -75,7 +75,7 @@ export const getChannelVideos = async (channel) => {
   const allVideos = [];
 
   results.items.map(item => {
-    allVideos.push(item);
+    return allVideos.push(item);
   })
 
   while (pageToken) {
@@ -83,7 +83,7 @@ export const getChannelVideos = async (channel) => {
     const nextPageResults = nextPageResponse.data.items;
 
     nextPageResults.map((item) => {
-      allVideos.push(item);
+      return allVideos.push(item);
     });
  
     pageToken = nextPageResponse.data.nextPageToken; 

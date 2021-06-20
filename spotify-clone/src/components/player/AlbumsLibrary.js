@@ -26,7 +26,7 @@ function AlbumsLibrary({album, spotify}) {
   return (
     <div className="album__body">
       <div className="album__cover" onClick={selectAlbum}>
-        <img src={album?.images[0]?.url}/>
+        <img src={album?.images[0]?.url} alt={album.name} />
       </div>
       <div className="album__Info">
         <h2>{album?.name}</h2>

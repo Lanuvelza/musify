@@ -1,5 +1,4 @@
 import { Avatar, Box, makeStyles } from "@material-ui/core";
-import { LinearScale, Opacity } from "@material-ui/icons";
 import React from "react"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
 import "./styles/Artist.css";
@@ -34,7 +33,7 @@ const useStyles = makeStyles({
 
 
 function Artist({artist, albums, spotify}) {
-  const [{}, dispatch] = useDataLayerValue();
+  const [{} ,dispatch] = useDataLayerValue();
   const props = { backgroundImage: albums ? albums[0].images[0].url : artist.images[0].url, backgroundColor: 'pink' }
   const classes = useStyles(props);
 

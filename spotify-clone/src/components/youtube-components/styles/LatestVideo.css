@@ -41,6 +41,8 @@
 }
 
 .video__description {
+  height: 10vh;
+  background: rgba(76, 175, 80, 0.3);
   color: lightsteelblue;
   font-size: 24px;
   /* display: none; */
@@ -55,17 +57,31 @@
   opacity: 0.7;
 }
 
-@keyframes fade-in {
+.video__player__playing { 
+  width: 50vw;
+  /* height: 40vh; */
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  opacity: 1;
+}
+
+@keyframes video-fade-in {
   0% {opacity: 0.7;}
   50% {opacity: 0.9;}
   100% {opacity: 1;}
 }
 
 .video__player:hover {
-  animation: fade-in 0.4s;
+  animation: video-fade-in 0.4s;
   opacity: 1;
 }
 
-.video__player:hover + .video__description {
-  display: block;
+/* .video__player:hover + .video__description > p {
+  /* display: block; */
+  /* color: pink; */
+/* } */ 
+
+.video__header > h1:hover + .video__description > p {
+  color: aliceblue;
 }

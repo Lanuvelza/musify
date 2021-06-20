@@ -1,9 +1,9 @@
 import React from 'react';
-import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
+// import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import "./styles/ChannelVideos.css"; 
 
-function ChannelVideos({}) {
-  const [{channel}, youtubeDispatch] = useYoutubeDataLayerValue();
+function ChannelVideos() {
+  // const [] = useYoutubeDataLayerValue();
 
 
   return (

@@ -9,7 +9,7 @@ import Player from "./components/player/Player";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token, playlists }, dispatch] = useDataLayerValue(); 
+  const [{ token }, dispatch] = useDataLayerValue(); 
 
   useEffect(() => {
     const hash = getTokenFromUrl();

@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import "./styles/Footer.css"
 import SpotifyPlayer from 'react-spotify-web-playback';
-import { 
-  PlayCircleOutline,
-  SkipPrevious,
-  SkipNext,
-  PlaylistPlay,
-  Shuffle,
-  Repeat,
-  VolumeDown,
-} from "@material-ui/icons";
-import { Grid, Slider } from "@material-ui/core";
+// import { 
+//   PlayCircleOutline,
+//   SkipPrevious,
+//   SkipNext,
+//   PlaylistPlay,
+//   Shuffle,
+//   Repeat,
+//   VolumeDown,
+// } from "@material-ui/icons";
+// import { Grid, Slider } from "@material-ui/core";
 import { useDataLayerValue } from "../../contexts/DataLayer";
 
 function Footer() {

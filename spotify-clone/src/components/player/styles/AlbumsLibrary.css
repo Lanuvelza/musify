@@ -14,12 +14,6 @@
   transition: 200ms transform ease-in; 
   transform: scale(1.12);
 }
-
-.album__cover:hover + .album__Info {
-  animation: fade-in 0.4s;
-  opacity: 1;
-}
-
 @keyframes fade-in {
   0% {opacity: 0;}
   25% {opacity: 0.25;}
@@ -27,6 +21,12 @@
   75% {opacity: 0.75;}
   100% {opacity: 1;}
 }
+
+.album__cover:hover + .album__Info {
+  animation: fade-in 1.5s;
+  opacity: 1;
+}
+
 
 
 .album__Info {

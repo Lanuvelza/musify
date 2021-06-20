@@ -1,25 +1,26 @@
 import React from "react"; 
 import "./styles/Body.css";
-import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons"; 
+// import { PlayCircleFilled, Favorite, MoreHoriz } from "@material-ui/icons"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
-import Header from "./Header";
+// import Header from "./Header";
 import SongRow from "./SongRow";
 import Album from "./Album";
 import Artist from "./Artist";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 import AlbumsLibrary from "./AlbumsLibrary";
 
 function Body({spotify}) {
   const [{ 
-    discover_weekly, 
-    playlists, 
-    current_playlist, 
+    // discover_weekly, 
+    // playlists, 
+    // current_playlist, 
     albums, 
     album, 
     tracks, 
-    artists, 
+    // artists, 
     artist, 
-    searching }, dispatch] = useDataLayerValue();
+    // searching 
+  }] = useDataLayerValue();
 
   return (
     <div className="body">

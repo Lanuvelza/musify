@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 
 
 function YoutubeSearchResults({channel}) {
-  const [{channels}, youtubeDispatch] = useYoutubeDataLayerValue();
+  const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const classes = useStyles(); 
 

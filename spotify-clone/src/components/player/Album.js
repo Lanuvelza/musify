@@ -1,5 +1,4 @@
-import { Grid } from "@material-ui/core";
-import { AlbumSharp, DragHandle, PlayCircleFilled } from "@material-ui/icons";
+import { PlayCircleFilled } from "@material-ui/icons";
 import React from "react"; 
 import { useDataLayerValue } from "../../contexts/DataLayer"; 
 import "./styles/Album.css"; 
@@ -49,7 +48,11 @@ function Album({album, spotify}) {
 
   return (
     <div className="album__info">
-      {album && <img src={album.images[0].url} onClick={handleClick}/>}
+      {album && 
+        <img 
+          src={album.images[0].url}
+          alt={album.name} 
+          onClick={handleClick}/>}
       <div className="album__infoText">
         {album.id === albums[0].id ? 
         <>

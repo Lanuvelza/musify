@@ -36,7 +36,7 @@ const filterAblumsByMarket = function(albums, country) {
 }
 
 function SearchResults({artist, spotify}) {
-  const [{}, dispatch] = useDataLayerValue();
+  const [{} ,dispatch] = useDataLayerValue();
 
   const classes = useStyles();
 

@@ -3,12 +3,30 @@ import Youtube from 'react-youtube';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import "./styles/LatestVideo.css"; 
 
-function LatestVideo({}) {
-  const [{channel, latest__video}, youtubeDispatch] = useYoutubeDataLayerValue();
+function LatestVideo() {
+  const [{latest__video, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const playerOnReady = (event) => {
 
     event.target.pauseVideo();
+    youtubeDispatch({
+      type: "SET_YOUTUBE_PLAYING",
+      youtube__playing: false
+    })
+  }
+
+  const playerOnPlay = (event) => {
+    youtubeDispatch({
+      type: "SET_YOUTUBE_PLAYING",
+      youtube__playing: true
+    })
+  }
+
+  const playerOnStateChange = (event) => {
+    youtubeDispatch({
+      type: "SET_YOUTUBE_PLAYING",
+      youtube__playing: false
+    })
   }
 
   const opts = {
@@ -27,9 +45,11 @@ function LatestVideo({}) {
       </div>
       <Youtube 
         videoId={latest__video?.contentDetails.videoId}
-        className="video__player"
+        className={youtube__playing ? "video__player__playing" : "video__player"}
         opts={opts}
         onReady={playerOnReady}
+        onPlay={playerOnPlay}
+        onStateChange={playerOnStateChange}
       />
       <hr />
       <div className="video__description">

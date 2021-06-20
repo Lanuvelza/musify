@@ -11,7 +11,7 @@ import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 
 
 function Sidebar({ spotify }) {
-  const [{ playlists, searchmode}, dispatch] = useDataLayerValue();
+  const [{searchmode}, dispatch] = useDataLayerValue();
   const [{}, viewDispatch] = useViewDataLayerValue();
 
   const toggleHome = () => {

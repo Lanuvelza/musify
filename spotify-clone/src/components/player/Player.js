@@ -12,9 +12,9 @@ import YoutubeSearchResults from "./YoutubeSearchResults";
 import YoutubeBody from "../youtube-components/YoutubeBody";
 
 function Player({ spotify }) {
-  const [{searching, artists}, dispatch] = useDataLayerValue();
-  const [{channels}, youtubeDispatch] = useYoutubeDataLayerValue();
-  const [{view}, viewDispatch] = useViewDataLayerValue();
+  const [{searching, artists}] = useDataLayerValue();
+  const [{channels}] = useYoutubeDataLayerValue();
+  const [{view}] = useViewDataLayerValue();
 
   return (
   <div className="player">
