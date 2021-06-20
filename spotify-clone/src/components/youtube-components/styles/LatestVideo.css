@@ -1,12 +1,11 @@
 .latestvideo__body {
-  /* width: 56vw; */
+  width: 56vw;
   /* height: 30vh; */
   /* margin-top: 20px; */
   margin: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
   padding: 20px;
   /* background-color: white; */
-  color: black;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -31,20 +30,12 @@
   color: pink;
 }
 
-.latestvideo__body > hr {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  background-color: rosybrown;
-  height: 2px;
-  border-style: none;
-
-}
-
 .video__description {
-  height: 10vh;
-  background: rgba(76, 175, 80, 0.3);
+  padding: 15px;
+  /* background: rgba(76, 175, 80, 0.3); */
   color: lightsteelblue;
   font-size: 24px;
+  letter-spacing: 2px;
   /* display: none; */
 }
 
@@ -77,11 +68,3 @@
   opacity: 1;
 }
 
-/* .video__player:hover + .video__description > p {
-  /* display: block; */
-  /* color: pink; */
-/* } */ 
-
-.video__header > h1:hover + .video__description > p {
-  color: aliceblue;
-}

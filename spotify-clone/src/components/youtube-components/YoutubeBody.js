@@ -8,9 +8,11 @@ function YoutubeBody() {
 
   return (
     <div className="main">
-      <ChannelProfile />
-      <div className="videos__body">
+      <div className="main__top">
+        <ChannelProfile />
         <LatestVideo />
+      </div>
+      <div className="videos__body">
         <ChannelVideos />
       </div>
       

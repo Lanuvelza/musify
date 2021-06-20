@@ -2,26 +2,24 @@
 .channel {
   width: 20vw;
   height: 66vh;
-  margin: 20px;
+  /* margin: 20px; */
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.7), transparent);
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   opacity: 1;
   text-align: center;
-  color: black;
+  color: lightsteelblue;
   /* overflow-y: scroll; */
 
 }
 
 
 .profile__picture {
-  height: 15vw;
+  height: 12vw;
   margin-bottom: 20px;
-  border-radius: 25px;
   border-style: solid;
   border-color: black;
-  border-width: 2px;
 }

@@ -51,10 +51,6 @@ function LatestVideo() {
         onPlay={playerOnPlay}
         onStateChange={playerOnStateChange}
       />
-      <hr />
-      <div className="video__description">
-        <p>{latest__video?.snippet?.description}</p>
-      </div>
     </div>
   )
 }

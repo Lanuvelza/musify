@@ -1,13 +1,11 @@
 .main {
   /* background-color: purple; */
-  margin: 40px;
+  /* margin: 40px; */
   margin-bottom: 85px;
-  border-radius: 25px;
-  opacity: 0.8;
-  display: flex;
 }
 
-.videos__body {
+.main__top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-bottom: -25px;
 }
