@@ -1,4 +1,5 @@
 import React from 'react';
+import TimeAgo from 'react-timeago'
 import Youtube from 'react-youtube';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import "./styles/LatestVideo.css"; 
@@ -42,6 +43,9 @@ function LatestVideo() {
       <div className="video__header">
         <h2>{video?.contentDetails?.videoId === latest__video?.contentDetails.videoId ? "Latest Video" : null}</h2>
         <h1>{video ? video?.snippet?.title : latest__video?.snippet?.title}</h1>
+        <p>
+          {video ? <TimeAgo date={video?.snippet?.publishedAt} /> : <TimeAgo date={latest__video?.snippet?.publishedAt} /> }
+        </p>
       </div>
       <Youtube 
         videoId={video ? video?.contentDetails?.videoId : latest__video?.contentDetails.videoId}
