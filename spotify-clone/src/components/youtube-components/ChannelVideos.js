@@ -16,9 +16,7 @@ function ChannelVideos() {
 
   // resets the scroll back to the start every time the channel changes
   useEffect(() => {
-
     resetScroll();
-
   }, [channel]);
 
 
