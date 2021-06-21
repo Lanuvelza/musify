@@ -9,13 +9,17 @@ import { ViewDataLayer } from './contexts/ViewDataLayer';
 import viewReducer, { initialViewState } from './reducers/viewReducer';
 import { YoutubeDataLayer } from './contexts/YoutubeDataLayer';
 import youtubeReducer, { initialYoutubeDataState } from './reducers/youtubeReducer';
+import { InstagramDataLayer } from './contexts/InstagramDataLayer';
+import instagramReducer, { initialInstagramDataState } from './reducers/instagramReducer';
 
 ReactDOM.render(
   <React.StrictMode>
     <DataLayer initialState={initialState} reducer={reducer}>
       <ViewDataLayer initialState={initialViewState} reducer={viewReducer}>
         <YoutubeDataLayer initialState={initialYoutubeDataState} reducer={youtubeReducer}>
-          <App />
+          <InstagramDataLayer initialState={initialInstagramDataState} reducer={instagramReducer}>
+            <App />
+          </InstagramDataLayer>
         </YoutubeDataLayer>
       </ViewDataLayer>
     </DataLayer>
