@@ -69,7 +69,8 @@ export const getChannelVideos = async (channel) => {
   const response = await axios.get(`${baseURL}/playlistItems?part=snippet,contentDetails&playlistId=${uploadID}&maxResults=50&key=${api_key}`);
 
   const results = response.data;
-  let pageToken = results.nextPageToken; 
+  let pageToken = results.nextPageToken;
+  let totalVideos = 0; 
 
 
   const allVideos = [];
@@ -78,7 +79,7 @@ export const getChannelVideos = async (channel) => {
     return allVideos.push(item);
   })
 
-  while (pageToken) {
+  while (totalVideos < 100 && pageToken) {
     const nextPageResponse = await axios.get(`${baseURL}/playlistItems?part=snippet,contentDetails&playlistId=${uploadID}&maxResults=50&key=${api_key}&pageToken=${pageToken}`)
     const nextPageResults = nextPageResponse.data.items;
 
@@ -87,6 +88,7 @@ export const getChannelVideos = async (channel) => {
     });
  
     pageToken = nextPageResponse.data.nextPageToken; 
+    totalVideos += 50;
 
   }
 

@@ -14,7 +14,10 @@ function ChannelProfile() {
         alt={channel?.snippet?.title}
         className="profile__picture" />
       <h2>{channel?.statistics?.subscriberCount} Suscribers</h2>
-      <p>{channel?.snippet?.description}</p>
+      {channel?.snippet?.description !== "" ? 
+      <div className="profile__description">
+        <p>{channel?.snippet?.description}</p>
+      </div> : null }
     </div>
   );
 

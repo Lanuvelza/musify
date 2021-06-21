@@ -36,11 +36,16 @@ function YoutubeSearchResults({channel}) {
         videos: videos
       })
 
+      
       youtubeDispatch({
         type: "SET_LATEST_VIDEO", 
         latest__video: latestVideo
       })
-
+      
+      youtubeDispatch({
+        type: "SET_VIDEO",
+        video: null
+      })
     })
   }
 

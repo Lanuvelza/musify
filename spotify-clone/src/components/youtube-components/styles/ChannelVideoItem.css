@@ -9,4 +9,27 @@
 .videoitem__body > img {
   height: 30vh;
   width: 40vh;
+  opacity: 0.5;
+}
+
+.videoitem__body > img:hover {
+  opacity: 1;
+}
+
+@keyframes video-title-fade-in {
+  0% {opacity: 0;}
+  25% {opacity: 0.25;}
+  50% {opacity: 0.5;}
+  75% {opacity: 0.75;}
+  100% {opacity: 1;}
+}
+
+.videoitem__body > img:hover + h3 {
+  animation: video-title-fade-in 1.2s;
+  opacity: 1;
+
+}
+
+.videoitem__body > h3 {
+  opacity: 0;
 }

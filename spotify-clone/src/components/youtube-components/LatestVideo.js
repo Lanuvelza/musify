@@ -4,7 +4,7 @@ import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import "./styles/LatestVideo.css"; 
 
 function LatestVideo() {
-  const [{latest__video, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
+  const [{latest__video, video, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const playerOnReady = (event) => {
 
@@ -40,11 +40,11 @@ function LatestVideo() {
   return (
     <div className="latestvideo__body">
       <div className="video__header">
-        <h2>Latest Video</h2>
-        <h1>{latest__video?.snippet?.title}</h1>
+        <h2>{video?.contentDetails?.videoId === latest__video?.contentDetails.videoId ? "Latest Video" : null}</h2>
+        <h1>{video ? video?.snippet?.title : latest__video?.snippet?.title}</h1>
       </div>
       <Youtube 
-        videoId={latest__video?.contentDetails.videoId}
+        videoId={video ? video?.contentDetails?.videoId : latest__video?.contentDetails.videoId}
         className={youtube__playing ? "video__player__playing" : "video__player"}
         opts={opts}
         onReady={playerOnReady}

@@ -1,5 +1,6 @@
 .songRow {
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -14,7 +15,8 @@
 }
 
 .songRow__selected {
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 20px;
   display: flex;
   align-items: center;

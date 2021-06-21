@@ -44,8 +44,10 @@
   /* height: 40vh; */
   display: flex;
   justify-content: center;
-  margin: auto;
+  /* margin: auto; */
   opacity: 0.7;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+
 }
 
 .video__player__playing { 
