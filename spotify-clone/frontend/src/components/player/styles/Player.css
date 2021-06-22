@@ -1,0 +1,38 @@
+.player__body {
+  display: flex;
+}
+
+.main__body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 0.8;
+  color: white;
+  padding: 30px;
+  background: linear-gradient(rgb(91,87, 115), rgba(0, 0, 0, 1));
+  overflow-y: overlay;
+}
+
+.main__body::-webkit-scrollbar {
+  display: none;
+}
+
+.main__header {
+  margin-bottom: 20px;
+}
+
+.searchResults__body {
+  height: 325px;
+  margin: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.youtubeSearchResults__body {
+  height: 325px;
+  margin: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  overflow-x: scroll;
+}
