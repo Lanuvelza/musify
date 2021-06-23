@@ -24,7 +24,18 @@ export const searchInstagram = (query) => {
   })
 }
 
+export const filterByVerification = (users) => {
+  console.log(users);
+  return users.filter((user) => user.is_verified === true); 
+}
 
 
-
+// export const retrieveImageURL = (url) => {
+//   console.log(url)
+//   return axios.get(`/images/${url}`)
+//   .then((response) => {
+//     console.log(response); 
+//     return response.data;
+//   })
+// }
 

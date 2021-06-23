@@ -3,10 +3,16 @@ require('dotenv').config();
 const app = express(); 
 const port = 8000; 
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const { login, search } = require('./instagram-queries');
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 
 app.get('/test', (req, res) => {

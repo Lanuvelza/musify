@@ -10,11 +10,14 @@ import SearchResults from "./SearchResults";
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
 import YoutubeSearchResults from "./YoutubeSearchResults";
 import YoutubeBody from "../youtube-components/YoutubeBody";
+import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
+import InstagramSearchResults from "./InstagramSearchResults";
 
 function Player({ spotify }) {
   const [{searching, artists}] = useDataLayerValue();
   const [{channels}] = useYoutubeDataLayerValue();
   const [{view}] = useViewDataLayerValue();
+  const [{instagram__users}] = useInstagramDataLayerValue();
 
   return (
   <div className="player">
@@ -34,6 +37,12 @@ function Player({ spotify }) {
           <div className="youtubeSearchResults__body">
             {channels?.length && channels?.map((channel) => (
               <YoutubeSearchResults channel={channel} key={channel.id.channelId} />
+            ))}
+          </div>
+          <hr />
+          <div className="instagramSearchResults__body">
+            {instagram__users?.length && instagram__users?.map((user) => (
+              <InstagramSearchResults user={user} key={user.pk} />
             ))}
           </div>
           </>}

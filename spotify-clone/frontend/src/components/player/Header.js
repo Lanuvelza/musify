@@ -5,13 +5,15 @@ import { Avatar } from "@material-ui/core";
 import { useDataLayerValue } from "../../contexts/DataLayer";
 import { filterChannelsByVisibleSubscriberCount, searchChannels, sortChannelsBySubscriberCount } from "../youtube/youtube";
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
-import { searchInstagram } from "../instagram/instagram";
+import { filterByVerification, searchInstagram } from "../instagram/instagram";
+import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
 
 
 function Header({ spotify }) {
   console.log(spotify);
   const [{ user, searchmode }, dispatch] = useDataLayerValue(); 
   const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
+  const [{}, instagramDispatch] = useInstagramDataLayerValue();
   const [search, setSearch] = useState("");
 
   const handleSubmit = (event) => {
@@ -20,6 +22,16 @@ function Header({ spotify }) {
     searchInstagram(search)
     .then(response => {
       console.log(response);
+      const users = response.users.map((item) => {
+        return item.user
+      });
+      console.log(users)
+      const results = filterByVerification(users);
+      console.log(results);
+      instagramDispatch({
+        type: "SET_INSTAGRAM_USERS",
+        instagram__users: results
+      })
     })
 
     searchChannels(search)

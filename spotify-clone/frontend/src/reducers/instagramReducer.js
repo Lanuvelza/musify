@@ -19,7 +19,7 @@ const instagramReducer = (state, action) => {
     case "SET_INSTAGRAM_USERS": 
       return {
         ...state,
-        instagram__user: action.instagram__user
+        instagram__users: action.instagram__users
       }
     case "SET_INSTAGRAM_USER": 
       return {

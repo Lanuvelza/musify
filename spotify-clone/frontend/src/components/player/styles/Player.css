@@ -36,3 +36,11 @@
   display: flex;
   overflow-x: scroll;
 }
+
+.instagramSearchResults__body {
+  height: 325px;
+  margin: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  overflow-x: scroll;
+}
