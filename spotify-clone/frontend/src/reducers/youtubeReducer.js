@@ -4,7 +4,10 @@ export const initialYoutubeDataState = {
   videos: null,
   video: null,
   latest__video: null,
-  youtube__playing: false
+  youtube__playing: false,
+  query: null,
+  query_videos: null,
+  keyword: null 
 }
 
 const youtubeReducer = (state, action) => {
@@ -41,6 +44,22 @@ const youtubeReducer = (state, action) => {
         ...state,
         youtube__playing: action.youtube__playing
       }
+    case "SET_QUERY": 
+      return {
+        ...state, 
+        query: action.query
+      }
+    case "SET_QUERY_VIDEOS": 
+      return {
+        ...state, 
+        query_videos: action.query_videos
+      }
+    case "SET_KEYWORD": {
+      return {
+        ...state,
+        keyword: action.keyword
+      }
+    }
     default:
       return state;
   }

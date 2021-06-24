@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import VideoItem from './VideoItem';
-import "./styles/ChannelVideos.css"; 
+import "./styles/OtherUploads.css"; 
 
-function ChannelVideos() {
-  const [{channel, videos}, youtubeDispatch] = useYoutubeDataLayerValue();
+function OtherUploads() {
+  const [{channel, query_videos, keyword}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const resetScroll = () => {
-    const element = document.getElementsByClassName("channelvideo__library");
+    const element = document.getElementsByClassName("othervideo__library");
     
     if (element) {
       element[0].scrollLeft = 0;
@@ -21,12 +21,12 @@ function ChannelVideos() {
 
 
   return (
-    <div className="channelvideo__body">
-      <div className="channelvideo__header"> 
-        <h2>{channel?.snippet?.title}'s Uploads</h2>
+    <div className="othervideo__body">
+      <div className="othervideo__header"> 
+        <h2>Uploads of {keyword}</h2>
       </div>
-      <div className="channelvideo__library">
-        {videos?.map((video) => (
+      <div className="othervideo__library">
+        {query_videos?.map((video) => (
           <VideoItem video={video} />
         ))}
       </div>
@@ -34,4 +34,4 @@ function ChannelVideos() {
   )
 }
 
-export default ChannelVideos;
+export default OtherUploads;

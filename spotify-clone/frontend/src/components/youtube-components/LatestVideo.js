@@ -2,6 +2,7 @@ import React from 'react';
 import TimeAgo from 'react-timeago'
 import Youtube from 'react-youtube';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
+import { replaceWithQuotations } from '../youtube/youtube';
 import "./styles/LatestVideo.css"; 
 
 function LatestVideo() {
@@ -42,13 +43,13 @@ function LatestVideo() {
     <div className="latestvideo__body">
       <div className="video__header">
         <h2>{video?.contentDetails?.videoId === latest__video?.contentDetails.videoId ? "Latest Video" : null}</h2>
-        <h1>{video ? video?.snippet?.title : latest__video?.snippet?.title}</h1>
+        <h1>{video ? replaceWithQuotations(video?.snippet?.title) : replaceWithQuotations(latest__video?.snippet?.title)}</h1>
         <p>
           {video ? <TimeAgo date={video?.snippet?.publishedAt} /> : <TimeAgo date={latest__video?.snippet?.publishedAt} /> }
         </p>
       </div>
       <Youtube 
-        videoId={video ? video?.contentDetails?.videoId : latest__video?.contentDetails.videoId}
+        videoId={video ? (video?.contentDetails?.videoId || video?.id?.videoId) : latest__video?.contentDetails.videoId}
         className={youtube__playing ? "video__player__playing" : "video__player"}
         opts={opts}
         onReady={playerOnReady}

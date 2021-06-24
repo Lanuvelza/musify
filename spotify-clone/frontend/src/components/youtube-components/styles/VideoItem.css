@@ -7,8 +7,8 @@
 }
 
 .videoitem__body > img {
-  height: 30vh;
-  width: 40vh;
+  height: 300px;
+  width: 400px;
   opacity: 0.5;
 }
 

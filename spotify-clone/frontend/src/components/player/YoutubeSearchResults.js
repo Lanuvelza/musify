@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles } from "@material-ui/core";
 import "./styles/YoutubeSearchResults.css";
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
-import { getChannelVideos } from '../youtube/youtube';
+import { getChannelVideos, searchVideosByQuery } from '../youtube/youtube';
 
 const useStyles = makeStyles({
   avatar: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 
 
 function YoutubeSearchResults({channel}) {
-  const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
+  const [{query}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const classes = useStyles(); 
 
@@ -45,6 +45,23 @@ function YoutubeSearchResults({channel}) {
       youtubeDispatch({
         type: "SET_VIDEO",
         video: null
+      })
+    })
+
+    searchVideosByQuery(query)
+    .then((results) => {
+      // console.log("Query results", results);
+      const videos = results.data.items;
+      // console.log(videos);
+
+      youtubeDispatch({
+        type: "SET_QUERY_VIDEOS", 
+        query_videos: videos
+      })
+    
+      youtubeDispatch({
+        type: "SET_KEYWORD",
+        keyword: query
       })
     })
   }

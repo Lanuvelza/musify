@@ -23,8 +23,8 @@ export const filterChannelsByVisibleSubscriberCount = (channels) => {
 }
 
 // searches channels based on the query term 
-export const searchChannels = (name) => {
-  return axios.get(`${baseURL}/search?key=${api_key}&q=${name}&type=channel&part=snippet&maxResults=25`)
+export const searchChannels = (query) => {
+  return axios.get(`${baseURL}/search?key=${api_key}&q=${query}&type=channel&part=snippet&maxResults=25`)
   .then(response => {
 
     // console.log(response);
@@ -95,5 +95,19 @@ export const getChannelVideos = async (channel) => {
   return allVideos;
 }
 
+// searches videos by relevance related to the artist
+export const searchVideosByQuery = async (query) => {
+  return axios.get(`${baseURL}/search?key=${api_key}&q=${query}&type=videos&part=snippet&maxResults=50`)
+  .then((response) => {
+    return response; 
+  });
+}
 
+// replaces the title string with proper quotations
+export const replaceWithQuotations = (string) => {
+  return string.replace(/&#([0-9]{1,4});/gi , function(match, numStr) {
+    const num = parseInt(numStr, 10);
+    return String.fromCharCode(num);
+  }); 
+}
 

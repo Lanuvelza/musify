@@ -1,9 +1,10 @@
 import React from 'react';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
-import "./styles/ChannelVideoItem.css";
+import { replaceWithQuotations } from '../youtube/youtube';
+import "./styles/VideoItem.css";
 
 
-function ChannelVideoItem({video}) {
+function VideoItem({video}) {
   const [{}, youtubeDispatch] =useYoutubeDataLayerValue();
 
   const selectVideo = () => {
@@ -17,12 +18,12 @@ function ChannelVideoItem({video}) {
   <div className="videoitem__body">
     <img 
       src={video?.snippet?.thumbnails?.high?.url} 
-      alt={video?.snippet?.titel} 
+      alt={video?.snippet?.title} 
       onClick={selectVideo}
     />
-    <h3>{video?.snippet?.title}</h3>
+    <h3>{replaceWithQuotations(video?.snippet?.title)}</h3>
   </div>
   )
 }
 
-export default ChannelVideoItem;
+export default VideoItem;

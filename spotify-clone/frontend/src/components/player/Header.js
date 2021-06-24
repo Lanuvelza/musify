@@ -36,20 +36,24 @@ function Header({ spotify }) {
 
     searchChannels(search)
     .then((results) => {
-      console.log(results);
-
+      // console.log(results);
       const OrderedChannels = sortChannelsBySubscriberCount(filterChannelsByVisibleSubscriberCount(results));
-      console.log(OrderedChannels);
+      // console.log(OrderedChannels);
 
       youtubeDispatch({
         type: "SET_CHANNELS",
         channels: OrderedChannels
       })
+
+      youtubeDispatch({
+        type: "SET_QUERY",
+        query: search
+      })
     })
 
     spotify.searchArtists(search)
     .then((results) => {
-      console.log(results.artists);
+      // console.log(results.artists);
       dispatch({
         type: "SET_ARTISTS",
         artists: results.artists
