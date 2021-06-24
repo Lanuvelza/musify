@@ -1,0 +1,13 @@
+.post_item_picture {
+  width: 15vw;
+  height: 24vh;
+  object-fit: contain;
+  border-style: solid;
+  border-color: white;
+  margin: 2px;
+  opacity: 0.5;
+}
+
+.post_item_picture:hover {
+  opacity: 1;
+}

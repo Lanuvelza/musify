@@ -19,14 +19,14 @@
 .post__picture {
   border-style: solid;
   border-color: white;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   object-fit: contain;
 }
 
-hr {
+/* hr {
 
-}
+} */
 
 .post__caption {
   margin: 20px;

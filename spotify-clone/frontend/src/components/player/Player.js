@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles/Player.css";
 import Sidebar from "./Sidebar";
 import Body from "./Body";

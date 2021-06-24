@@ -9,9 +9,11 @@ function InstagramBody() {
 
   return (
     <div className="main__instagram__body">
-      <InstagramProfile />
-      <div className="posts_body">
+      <div className="main__instagram__body__top">
+        <InstagramProfile />
         <Post />
+      </div>
+      <div className="posts_body">
         <UserPosts />
       </div>
     </div>

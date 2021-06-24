@@ -1,4 +1,14 @@
 .main__instagram__body {
-  display: flex;
   margin-bottom: 85px;
+}
+
+.main__instagram__body__top {
+  display: flex;
+}
+
+.posts_body {
+  margin: 20px;
+  margin-top: -150px;
+  display: flex;
+  justify-content: center;
 }
