@@ -12,6 +12,7 @@ import YoutubeSearchResults from "./YoutubeSearchResults";
 import YoutubeBody from "../youtube-components/YoutubeBody";
 import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
 import InstagramSearchResults from "./InstagramSearchResults";
+import InstagramBody from "../instagram-components/InstagramBody";
 
 function Player({ spotify }) {
   const [{searching, artists}] = useDataLayerValue();
@@ -50,6 +51,7 @@ function Player({ spotify }) {
         </div>
         {view === "SPOTIFY" && <Body spotify={spotify} /> }
         {view === "YOUTUBE" && <YoutubeBody /> }
+        {view === "INSTAGRAM" && <InstagramBody /> }
       </div>
     </div>
     <Footer />
