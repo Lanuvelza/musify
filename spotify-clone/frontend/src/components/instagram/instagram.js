@@ -29,13 +29,22 @@ export const filterByVerification = (users) => {
   return users.filter((user) => user.is_verified === true); 
 }
 
+export const getUser = (username) => {
+  console.log(username); 
+  return axios.get(`/user/${username}`)
+  .then((response) => {
+    console.log(response); 
+    return response
+  })
+}
 
-// export const retrieveImageURL = (url) => {
-//   console.log(url)
-//   return axios.get(`/images/${url}`)
-//   .then((response) => {
-//     console.log(response); 
-//     return response.data;
-//   })
-// }
+
+export const getUserPosts = (userid) => {
+  console.log(userid);
+  return axios.get(`/user/${userid}/posts`)
+  .then((response) => {
+    console.log(response); 
+    return response;
+  })
+}
 

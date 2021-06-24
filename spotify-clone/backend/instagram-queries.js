@@ -28,7 +28,42 @@ const search = async (query) => {
 }
 
 
+const getUser = async (username) => {
+  console.log(username)
+  const user = await client.getUserByUsername({ username: username });
+  console.log(user)
+  return user;
+}
+
+const getUserPosts = async (userid) => {
+  // console.log(userid) 
+  const posts = await client._getPosts({ userId: userid });
+  // console.log(posts.edge_owner_to_timeline_media.edges); 
+
+  const media = posts.edge_owner_to_timeline_media.edges;
+  let pageToken = posts.edge_owner_to_timeline_media.page_info.end_cursor; 
+  let totalPosts = 12;
+
+
+  while (totalPosts < 48 && pageToken) {
+
+    const nextPosts = await client._getPosts({userId: userid, nextPageToken: pageToken});
+
+    nextPosts.edge_owner_to_timeline_media.edges.map((edge) => {
+      return media.push(edge);
+    })
+
+    pageToken = nextPosts.edge_owner_to_timeline_media.page_info.end_cursor;
+    totalPosts += 12;
+  }
+
+  return media; 
+}
+
+
 module.exports = {
   login,
-  search
+  search,
+  getUser,
+  getUserPosts
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles } from "@material-ui/core";
 import "./styles/InstagramSearchResults.css";
 import { useInstagramDataLayerValue } from '../../contexts/InstagramDataLayer';
+import { getUser, getUserPosts } from '../instagram/instagram';
 
 const useStyles = makeStyles({
   avatar: {
@@ -17,6 +18,38 @@ function InstagramSearchResults({user, image_url}) {
 
   const classes = useStyles(); 
 
+  const selectUser = () => {
+    getUser(user?.username)
+    .then((response) => {
+      console.log(response)
+
+      const user = response.data;
+      
+      instagramDispatch({
+        type: "SET_INSTAGRAM_USER",
+        instagram__user: user
+      })
+    })
+
+    getUserPosts(user?.pk)
+    .then((response) => {
+      console.log(response)
+
+      const posts = response.data; 
+      const latest_post = response.data[0];
+
+      instagramDispatch({
+        type: "SET_POSTS",
+        posts: posts
+      })
+
+      instagramDispatch({
+        type: "SET_LATEST_POST",
+        latest__post: latest_post
+      })
+    })
+  }
+
 
   return (
     <div key={user?.pk} className="results__userBody">
@@ -25,7 +58,7 @@ function InstagramSearchResults({user, image_url}) {
         src={`https://workers.iantyylam.workers.dev/${user.profile_pic_url}`}
         alt={user?.username}
         className={classes.avatar}
-        
+        onClick={selectUser}
       />
       </div>
       <div className="results__userTitle">

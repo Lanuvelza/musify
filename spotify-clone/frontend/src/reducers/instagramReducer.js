@@ -36,7 +36,7 @@ const instagramReducer = (state, action) => {
         ...state,
         post: action.post
       }
-    case "LATEST_POST": 
+    case "SET_LATEST_POST": 
       return {
         ...state, 
         latest__post: action.latest__post

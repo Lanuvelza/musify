@@ -5,7 +5,7 @@ const port = 8000;
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const { login, search } = require('./instagram-queries');
+const { login, search, getUser, getUserPosts } = require('./instagram-queries');
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(
@@ -31,6 +31,21 @@ app.get('/search/:query', (req, res) => {
   search(query).then((response) => {
     res.json(response);
   })
+})
+
+app.get('/user/:username', (req, res) => {
+  const username = req.params.username;
+  getUser(username).then((response) => {
+    res.json(response);
+  })
+})
+
+app.get('/user/:userid/posts', (req, res) => {
+  const userid = req.params.userid;
+  getUserPosts(userid).then((response) => {
+    res.json(response);
+  })
+  
 })
 
 
