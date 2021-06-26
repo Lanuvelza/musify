@@ -105,6 +105,9 @@ export const searchVideosByQuery = async (query) => {
 
 // replaces the title string with proper quotations
 export const replaceWithQuotations = (string) => {
+  if (!string) {
+    return null;
+  }
   return string.replace(/&#([0-9]{1,4});/gi , function(match, numStr) {
     const num = parseInt(numStr, 10);
     return String.fromCharCode(num);

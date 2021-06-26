@@ -3,10 +3,10 @@ import TimeAgo from 'react-timeago'
 import Youtube from 'react-youtube';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import { replaceWithQuotations } from '../youtube/youtube';
-import "./styles/LatestVideo.css"; 
+import "./styles/Video.css"; 
 
-function LatestVideo() {
-  const [{latest__video, video, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
+function Video() {
+  const [{latest__video, video, videos, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const playerOnReady = (event) => {
 
@@ -42,14 +42,14 @@ function LatestVideo() {
   return (
     <div className="latestvideo__body">
       <div className="video__header">
-        <h2>{video?.contentDetails?.videoId === latest__video?.contentDetails.videoId ? "Latest Video" : null}</h2>
-        <h1>{video ? replaceWithQuotations(video?.snippet?.title) : replaceWithQuotations(latest__video?.snippet?.title)}</h1>
+        <h2>{video?.contentDetails?.videoId === videos[0]?.contentDetails.videoId ? "Latest Video" : null}</h2>
+        <h1>{replaceWithQuotations(video?.snippet?.title)}</h1>
         <p>
-          {video ? <TimeAgo date={video?.snippet?.publishedAt} /> : <TimeAgo date={latest__video?.snippet?.publishedAt} /> }
+          <TimeAgo date={video?.snippet?.publishedAt} />
         </p>
       </div>
       <Youtube 
-        videoId={video ? (video?.contentDetails?.videoId || video?.id?.videoId) : latest__video?.contentDetails.videoId}
+        videoId={video?.contentDetails?.videoId || video?.id?.videoId}
         className={youtube__playing ? "video__player__playing" : "video__player"}
         opts={opts}
         onReady={playerOnReady}
@@ -60,4 +60,4 @@ function LatestVideo() {
   )
 }
 
-export default LatestVideo;
+export default Video;

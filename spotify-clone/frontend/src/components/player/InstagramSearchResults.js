@@ -44,17 +44,10 @@ function InstagramSearchResults({user, image_url}) {
       })
 
       instagramDispatch({
-        type: "SET_LATEST_POST",
-        latest__post: latest_post
-      })
-
-      instagramDispatch({
         type: "SET_POST",
-        post: null
+        post: latest_post
       })
     })
-
-
   }
 
 
