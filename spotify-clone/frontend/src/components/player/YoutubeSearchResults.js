@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles } from "@material-ui/core";
 import "./styles/YoutubeSearchResults.css";
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
-import { getChannelVideos, searchVideosByQuery } from '../youtube/youtube';
+import { filterVideosOnly, getChannelVideos, searchVideosByQuery } from '../youtube/youtube';
 
 const useStyles = makeStyles({
   avatar: {
@@ -29,7 +29,7 @@ function YoutubeSearchResults({channel}) {
     .then(response => {
 
       const videos = response;
-      const latestVideo = response[0];
+      const latestVideo = videos[0]; 
       console.log(response);
       youtubeDispatch({
         type: "SET_VIDEOS",
@@ -45,9 +45,7 @@ function YoutubeSearchResults({channel}) {
 
     searchVideosByQuery(query)
     .then((results) => {
-      // console.log("Query results", results);
-      const videos = results.data.items;
-      // console.log(videos);
+      const videos = filterVideosOnly(results.data.items);
 
       youtubeDispatch({
         type: "SET_QUERY_VIDEOS", 

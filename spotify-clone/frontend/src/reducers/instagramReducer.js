@@ -4,6 +4,7 @@ export const initialInstagramDataState = {
   instagram__user: null, 
   posts: null, 
   post: null,
+  latest_post: null
 }
 
 const instagramReducer = (state, action) => {
@@ -34,6 +35,11 @@ const instagramReducer = (state, action) => {
       return {
         ...state,
         post: action.post
+      }
+    case "SET_LATEST_POST": 
+      return {
+        ...state, 
+        latest_post: action.latest_post
       }
     default: 
       return state;

@@ -114,3 +114,7 @@ export const replaceWithQuotations = (string) => {
   }); 
 }
 
+// filters only for videos from the results of searchVideosByQuery
+export const filterVideosOnly = (videos) => {
+  return videos.filter((video) => !video.id.kind.includes("channel"));
+}
