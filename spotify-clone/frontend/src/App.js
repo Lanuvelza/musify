@@ -4,7 +4,7 @@ import Login from "./components/Login"
 import { getTokenFromUrl } from "./components/spotify/spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue } from "./contexts/DataLayer";
-import Player from "./components/player/Player";
+import MainBody from "./components/main-components/MainBody";
 import { authorizeInstagram, searchInstagram } from "./components/instagram/instagram";
 
 const spotify = new SpotifyWebApi();
@@ -57,7 +57,7 @@ function App() {
 
   return (
   <div className="app">
-    {token ? <Player spotify={spotify} /> : <Login />}
+    {token ? <MainBody spotify={spotify} /> : <Login />}
   </div>
   );
 }
