@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 import { useDataLayerValue } from "../../contexts/DataLayer";
-import SearchResults from "./SearchResults";
+import SpotifySearchResults from "./SearchResults";
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
 import YoutubeSearchResults from "./YoutubeSearchResults";
 import YoutubeBody from "../youtube-components/YoutubeBody";
@@ -31,7 +31,7 @@ function MainBody({ spotify }) {
           <>
           <div className="searchResults__body">
             {artists?.items?.length && artists?.items?.map((item) => (
-            <SearchResults artist={item} key={item.id} spotify={spotify}/>
+            <SpotifySearchResults artist={item} key={item.id} spotify={spotify}/>
             ))}
           </div>
           <hr />

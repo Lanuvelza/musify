@@ -35,7 +35,7 @@ const filterAblumsByMarket = function(albums, country) {
   return filteredAlbums; 
 }
 
-function SearchResults({artist, spotify}) {
+function SpotifySearchResults({artist, spotify}) {
   const [{} ,dispatch] = useDataLayerValue();
 
   const classes = useStyles();
@@ -99,4 +99,4 @@ function SearchResults({artist, spotify}) {
   )
 }
 
-export default SearchResults;
+export default SpotifySearchResults;
