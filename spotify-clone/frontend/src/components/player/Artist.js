@@ -8,22 +8,20 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 'auto',
     marginBottom: '40px',
-    // background: `linear-gradiant(rgb(91, 87, 115), rgba(0,0,0,1)) url(${props.backgroundImage})`,
-    backgroundImage: `url(${props.backgroundImage})`,
-    backgroundPosition: '0px -425px',
+    backgroundImage: `linear-gradient(to top, rgba(5, 4, 4, 0.8), transparent 40%), url(${props.backgroundImage})`,
+    backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    borderRadius: '90px',
-    height: '350px',
-    width: '1550px',
-    paddingTop: '15px',
-    paddingBottom: '15px',
+    width: '72vw',
+    paddingTop: '25px',
+    paddingBottom: '25px',
     boxShadow: '5px 10px 18px black',
   }),
   avatar: {
-    height: '300px',
-    width: '300px',
+    height: '200px',
+    width: '200px',
+    margin: '20px',
     borderStyle: 'solid',
     borderColor: 'white',
     borderWidth: '3px',
@@ -34,7 +32,7 @@ const useStyles = makeStyles({
 
 function Artist({artist, albums, spotify}) {
   const [{} ,dispatch] = useDataLayerValue();
-  const props = { backgroundImage: albums ? albums[0].images[0].url : artist.images[0].url, backgroundColor: 'pink' }
+  const props = { backgroundImage: albums ? albums[0].images[0].url : artist.images[0].url}
   const classes = useStyles(props);
 
   const handleClick = () => {

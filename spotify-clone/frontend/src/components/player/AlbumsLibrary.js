@@ -7,11 +7,9 @@ function AlbumsLibrary({album, spotify}) {
   const [{}, dispatch] = useDataLayerValue();
   
   const selectAlbum = () => {
-    console.log(album.id);
     spotify.getAlbum(album.id)
     .then((album) => {
-      console.log(album);
-      console.log(album.tracks);
+      
       dispatch({
         type: "SET_ALBUM",
         album

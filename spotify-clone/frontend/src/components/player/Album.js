@@ -72,7 +72,8 @@ function Album({album, spotify}) {
             <div className="album__playMessage">
               <h2>Play Album</h2>
             </div>
-          </div>        </>}
+          </div>        
+        </>}
       </div>
     </div>
   );
