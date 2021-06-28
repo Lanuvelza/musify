@@ -6,7 +6,8 @@
 .header__left__searchbar {
   background-color: white;
   color: gray;
-  min-width: 70px;
+  min-width: 20vw;
+  /* width: 20vw; */
   border-radius: 30px;
   padding: 10px;
   align-items: center;
@@ -20,7 +21,7 @@
 
 .header__left__searchbar > form > input {
   border: none;
-  width: 400px;
+  width: 15vw;
   font-size: 20px;
 }
 

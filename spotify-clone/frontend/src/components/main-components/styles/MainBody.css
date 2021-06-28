@@ -21,8 +21,22 @@
   margin-bottom: 20px;
 }
 
+.search__body {
+  display: flex;
+}
+
 .searchResults__body {
-  height: 325px;
+  margin: 20px;
+  margin-bottom: 85px;
+  height: 80vh;
+  width: 45vw;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent 50%);
+  /* background-color: black; */
+}
+
+.spotifySearchResults__body {
+  height: 20vh;
   margin: 10px;
   margin-bottom: 25px;
   display: flex;

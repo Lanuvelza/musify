@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
-import "./styles/Player.css";
+import "./styles/MainBody.css";
 import Sidebar from "./Sidebar";
 import SpotifyBody from "../spotify-components/SpotifyBody";
 import Footer from "./Footer";
 import Header from "./Header";
 import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 import { useDataLayerValue } from "../../contexts/DataLayer";
-import SpotifySearchResults from "./SearchResults";
+import SpotifySearchResults from "./SpotifySearchResults";
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
 import YoutubeSearchResults from "./YoutubeSearchResults";
 import YoutubeBody from "../youtube-components/YoutubeBody";
 import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
 import InstagramSearchResults from "./InstagramSearchResults";
 import InstagramBody from "../instagram-components/InstagramBody";
+import SearchSelection from "./SearchSelection";
 
 function MainBody({ spotify }) {
   const [{searching, artists}] = useDataLayerValue();
@@ -27,26 +28,35 @@ function MainBody({ spotify }) {
       <div className="main__body">
         <div className="main__header">
           <Header spotify={spotify} />
-          {searching && 
-          <>
-          <div className="searchResults__body">
-            {artists?.items?.length && artists?.items?.map((item) => (
-            <SpotifySearchResults artist={item} key={item.id} spotify={spotify}/>
-            ))}
+          <div className="search__body">
+            {searching &&
+            <>
+            <div className="searchResults__body">
+              <h2>Spotify Artists</h2>
+              <div className="spotifySearchResults__body">
+                {artists?.items?.length && artists?.items?.map((item) => (
+                <SpotifySearchResults artist={item} key={item.id} spotify={spotify}/>
+                ))}
+              </div>
+              <hr />
+              <h2>Youtube Channels</h2>
+              <div className="youtubeSearchResults__body">
+                {channels?.length && channels?.map((channel) => (
+                  <YoutubeSearchResults channel={channel} key={channel.id.channelId} />
+                ))}
+              </div>
+              <hr />
+              <h2>Instagram Users</h2>
+              <div className="instagramSearchResults__body">
+                {instagram__users?.length && instagram__users?.map((user) => (
+                  <InstagramSearchResults user={user} key={user.pk} />
+                ))}
+              </div>
+            </div>
+            <SearchSelection /> 
+            </>}
+
           </div>
-          <hr />
-          <div className="youtubeSearchResults__body">
-            {channels?.length && channels?.map((channel) => (
-              <YoutubeSearchResults channel={channel} key={channel.id.channelId} />
-            ))}
-          </div>
-          <hr />
-          <div className="instagramSearchResults__body">
-            {instagram__users?.length && instagram__users?.map((user) => (
-              <InstagramSearchResults user={user} key={user.pk} />
-            ))}
-          </div>
-          </>}
 
         </div>
         {view === "SPOTIFY" && <SpotifyBody spotify={spotify} /> }

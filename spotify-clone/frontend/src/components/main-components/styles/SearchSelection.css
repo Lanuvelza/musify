@@ -1,0 +1,25 @@
+.selection__body {
+  margin: 20px;
+  margin-left: 5px;
+  padding: 20px;
+  height: 50vh;
+  width: 25vw;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.selected__tab {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected__tabInfo {
+  display: flex;
+  align-items: center;
+}
+
+.selected__profilePicture {
+  margin-right: 10px;
+}

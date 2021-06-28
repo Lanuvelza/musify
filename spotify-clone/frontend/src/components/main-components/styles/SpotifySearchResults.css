@@ -4,10 +4,17 @@
   margin: 10px;
   display: flex;
   flex-direction: column;
+  width: 15vw;
+  height: 19vw;
+}
+
+.results__itemBody:hover {
+  cursor: pointer;
+  background-color: black;
 }
 
 .results__itemAvatar {
-  margin: auto;
+  margin: 20px;
   display: flex;
   justify-content: center;
 }
@@ -15,11 +22,11 @@
 .results__itemInfo {
   display: inline-block;
   white-space: nowrap;
-  width: 215px; 
+  width: 10vw; 
   margin: auto;
-  margin-top: -15px;
+  margin-top: 2px;
   text-align: center;
-  font-size: 25px;
+  font-size: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
 }

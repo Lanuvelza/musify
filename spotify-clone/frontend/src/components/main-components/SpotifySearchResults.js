@@ -1,14 +1,15 @@
 import React from 'react'; 
 import { Avatar, makeStyles } from "@material-ui/core";
-import "./styles/SearchResults.css";
+import "./styles/SpotifySearchResults.css";
 import { useDataLayerValue } from "../../contexts/DataLayer";
 
 const useStyles = makeStyles({
   avatar: {
-    height: '200px',
-    width: '200px',
+    height: '80px',
+    width: '80px',
     boxShadow: '5px 8px 15px black',
-  }
+    margin: 'auto',
+  },
 })
 
 const filterAblumsByMarket = function(albums, country) {
@@ -71,11 +72,6 @@ function SpotifySearchResults({artist, spotify}) {
       })
 
       dispatch({
-        type: "SET_SEARCHING",
-        searching: false
-      })
-
-      dispatch({
         type: "SET_ALBUM", 
         album: null
       })
@@ -83,13 +79,12 @@ function SpotifySearchResults({artist, spotify}) {
   }
 
   return (
-    <div key={artist.id} className="results__itemBody">
+    <div key={artist.id} className="results__itemBody" onClick={selectArtist}>
       <div className="results__itemAvatar">
         <Avatar 
           src={artist.images.length ? artist.images[0].url : null} 
           alt={artist.name} 
           className={classes.avatar}
-          onClick={selectArtist}
         />
       </div>
     <div className="results__itemInfo">
