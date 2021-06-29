@@ -4,7 +4,7 @@
   padding: 20px;
   height: 50vh;
   width: 25vw;
-  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent 80%);
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -16,6 +16,7 @@
 }
 
 .selected__tab {
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

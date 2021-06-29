@@ -38,15 +38,9 @@
 }
 
 .results__userTitle {
-  width: 150px;
+  width: 10vw;
   margin: 20px;
-  display: inline-block;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   word-wrap: normal;
-  /* overflow: hidden; */
-  /* white-space: nowrap;
-  text-overflow: ellipsis;
-  text-decoration: none;
-  position: relative; */
 }
