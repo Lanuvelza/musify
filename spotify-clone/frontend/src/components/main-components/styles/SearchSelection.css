@@ -10,16 +10,27 @@
   justify-content: flex-end;
 }
 
+.selection__body > h4 {
+  font-size: 36px;
+}
+
 .selected__tab {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  background: linear-gradient(to right, rgba(5, 4, 4, 0.4), transparent);
+}
+
+.selected__tab > h6 {
+  font-size: 24px;
 }
 
 .selected__tabInfo {
   display: flex;
   align-items: center;
+  font-size: 18px;
 }
 
-.selected__profilePicture {
-  margin-right: 10px;
-}
+

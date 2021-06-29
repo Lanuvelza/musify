@@ -8,17 +8,23 @@ import SaveIcon from "@material-ui/icons/Save";
 
 const useStyles = makeStyles({
   profile_picture: {
-    marginRight: '10px',
+    margin: '15px',
+    height: '50px',
+    width: '50px',
   },
   button: {
     // backgroundColor: 'rgb(5, 4, 4)',
-    color: 'white',
-    borderColor: 'white',
+    color: 'lightsteelblue',
+    borderColor: 'lightsteelblue',
     margin: 'auto',
     display: 'flex',
     justifyContent: 'center',
+    boxShadow: '5px 10px 18px black',
+    width: '120px',
+    height: '50px',
     '&:hover': {
-      boxShadow: '5px 10px 18px black',
+      color: 'pink',
+      borderColor: 'pink',
     }
   }
 })
