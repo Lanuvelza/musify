@@ -12,6 +12,7 @@
 
 .selection__body > h4 {
   font-size: 36px;
+  color: aliceblue;
 }
 
 .selected__tab {
@@ -25,12 +26,14 @@
 
 .selected__tab > h6 {
   font-size: 24px;
+  color: aliceblue;
 }
 
 .selected__tabInfo {
   display: flex;
   align-items: center;
   font-size: 18px;
+  color: pink;
 }
 
 
