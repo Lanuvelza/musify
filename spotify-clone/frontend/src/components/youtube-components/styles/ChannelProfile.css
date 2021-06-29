@@ -27,6 +27,7 @@
 
 .profile__description {
   text-align: left;
+  word-wrap: break-word;
   overflow-y: scroll;
   width: 15vw;
   height: 40vh;

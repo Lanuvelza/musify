@@ -6,20 +6,21 @@ import { getUser, getUserPosts } from '../instagram/instagram';
 
 const useStyles = makeStyles({
   avatar: {
-    height: '200px',
-    width: '200px',
+    height: '120px',
+    width: '120px',
     boxShadow: '5px 8px 15px black',
+    margin: '2px',
   }
 })
 
 
-function InstagramSearchResults({user, image_url}) {
-  const [{}, instagramDispatch] = useInstagramDataLayerValue()
+function InstagramSearchResults({userItem}) {
+  const [{instagram__user}, instagramDispatch] = useInstagramDataLayerValue()
 
   const classes = useStyles(); 
 
   const selectUser = () => {
-    getUser(user?.username)
+    getUser(userItem?.username)
     .then((response) => {
       console.log(response)
 
@@ -27,11 +28,11 @@ function InstagramSearchResults({user, image_url}) {
       
       instagramDispatch({
         type: "SET_INSTAGRAM_USER",
-        instagram__user: user
+        instagram__user: userItem
       })
     })
 
-    getUserPosts(user?.pk)
+    getUserPosts(userItem?.pk)
     .then((response) => {
       console.log(response)
 
@@ -52,18 +53,21 @@ function InstagramSearchResults({user, image_url}) {
 
 
   return (
-    <div key={user?.pk} className="results__userBody">
+    <div 
+      key={userItem?.pk} 
+      className={userItem.pk === instagram__user?.pk ? "results__userBody__selected" : "results__userBody"}
+      onClick={selectUser}
+    >
       <div className="results__userAvatar">
       <Avatar 
-        src={`https://workers.iantyylam.workers.dev/${user.profile_pic_url}`}
-        alt={user?.username}
+        src={`https://workers.iantyylam.workers.dev/${userItem?.profile_pic_url}`}
+        alt={userItem?.username}
         className={classes.avatar}
-        onClick={selectUser}
       />
       </div>
       <div className="results__userTitle">
-        <p>{user?.username}</p>
-        <p>{user?.full_name}</p>
+        <p>{userItem?.username}</p>
+        <p>{userItem?.full_name}</p>
       </div>
 
     </div>

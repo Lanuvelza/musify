@@ -5,10 +5,10 @@ import { useDataLayerValue } from "../../contexts/DataLayer";
 
 const useStyles = makeStyles({
   avatar: {
-    height: '80px',
-    width: '80px',
+    height: '120px',
+    width: '120px',
     boxShadow: '5px 8px 15px black',
-    margin: 'auto',
+    margin: '2px',
   },
 })
 
@@ -36,14 +36,14 @@ const filterAblumsByMarket = function(albums, country) {
   return filteredAlbums; 
 }
 
-function SpotifySearchResults({artist, spotify}) {
-  const [{} ,dispatch] = useDataLayerValue();
+function SpotifySearchResults({artistItem, spotify}) {
+  const [{artist} ,dispatch] = useDataLayerValue();
 
   const classes = useStyles();
 
   const selectArtist = () => {
 
-    spotify.getArtistAlbums(artist.id, {include_groups: ["album", "single"], limit: 50})
+    spotify.getArtistAlbums(artistItem.id, {include_groups: ["album", "single"], limit: 50})
     .then((results) => {
 
       console.log(results);
@@ -57,7 +57,7 @@ function SpotifySearchResults({artist, spotify}) {
       })
     })
     .then(() => {
-      spotify.getArtistTopTracks(artist.id, "US")
+      spotify.getArtistTopTracks(artistItem.id, "US")
       .then((results) => {
         dispatch({
           type: "SET_TRACKS", 
@@ -68,7 +68,7 @@ function SpotifySearchResults({artist, spotify}) {
     .then(() => {
       dispatch({
         type: "SET_ARTIST",
-        artist
+        artist: artistItem
       })
 
       dispatch({
@@ -79,16 +79,20 @@ function SpotifySearchResults({artist, spotify}) {
   }
 
   return (
-    <div key={artist.id} className="results__itemBody" onClick={selectArtist}>
+    <div 
+      key={artistItem.id} 
+      className={artistItem.id === artist?.id ? "results__itemBody__selected" : "results__itemBody"} 
+      onClick={selectArtist}
+    >
       <div className="results__itemAvatar">
         <Avatar 
-          src={artist.images.length ? artist.images[0].url : null} 
-          alt={artist.name} 
+          src={artistItem.images.length ? artistItem.images[0].url : null} 
+          alt={artistItem.name} 
           className={classes.avatar}
         />
       </div>
     <div className="results__itemInfo">
-      <p>{artist.name}</p>
+      <p>{artistItem.name}</p>
     </div>
   </div>
   )

@@ -2,10 +2,13 @@
   border-style: none;
   border-radius: 25px;
   margin: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  width: 15vw;
-  height: 19vw;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  color: lightsteelblue;
 }
 
 .results__itemBody:hover {
@@ -13,20 +16,30 @@
   background-color: black;
 }
 
+.results__itemBody__selected { 
+  border-style: none;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  background-color: black;
+  color: pink;
+}
+
 .results__itemAvatar {
-  margin: 20px;
+  margin: 5px;
   display: flex;
   justify-content: center;
 }
 
 .results__itemInfo {
-  display: inline-block;
-  white-space: nowrap;
-  width: 10vw; 
-  margin: auto;
-  margin-top: 2px;
+  width: 10vw;
+  margin: 20px;
   text-align: center;
-  font-size: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 20px;
+  word-wrap: normal;
 }

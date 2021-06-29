@@ -35,21 +35,19 @@ function MainBody({ spotify }) {
               <h2>Spotify Artists</h2>
               <div className="spotifySearchResults__body">
                 {artists?.items?.length && artists?.items?.map((item) => (
-                <SpotifySearchResults artist={item} key={item.id} spotify={spotify}/>
+                <SpotifySearchResults artistItem={item} key={item.id} spotify={spotify}/>
                 ))}
               </div>
-              <hr />
               <h2>Youtube Channels</h2>
               <div className="youtubeSearchResults__body">
                 {channels?.length && channels?.map((channel) => (
-                  <YoutubeSearchResults channel={channel} key={channel.id.channelId} />
+                  <YoutubeSearchResults channelItem={channel} key={channel.id.channelId} />
                 ))}
               </div>
-              <hr />
               <h2>Instagram Users</h2>
               <div className="instagramSearchResults__body">
                 {instagram__users?.length && instagram__users?.map((user) => (
-                  <InstagramSearchResults user={user} key={user.pk} />
+                  <InstagramSearchResults userItem={user} key={user.pk} />
                 ))}
               </div>
             </div>

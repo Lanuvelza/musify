@@ -6,26 +6,27 @@ import { filterVideosOnly, getChannelVideos, searchVideosByQuery } from '../yout
 
 const useStyles = makeStyles({
   avatar: {
-    height: '200px',
-    width: '200px',
+    height: '120px',
+    width: '120px',
     boxShadow: '5px 8px 15px black',
+    margin: '2px'
   }
 })
 
 
-function YoutubeSearchResults({channel}) {
-  const [{query}, youtubeDispatch] = useYoutubeDataLayerValue();
+function YoutubeSearchResults({channelItem}) {
+  const [{query, channel}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const classes = useStyles(); 
 
   const selectChannel = () => {
-    console.log(channel);
+    console.log(channelItem);
     youtubeDispatch({
       type: "SET_CHANNEL",
-      channel: channel
+      channel: channelItem
     })
     
-    getChannelVideos(channel)
+    getChannelVideos(channelItem)
     .then(response => {
 
       const videos = response;
@@ -61,17 +62,20 @@ function YoutubeSearchResults({channel}) {
 
 
   return (
-    <div key={channel.id} className="results__channelBody">
+    <div 
+      key={channelItem.id} 
+      className={channelItem.id === channel?.id ? "results__channelBody__selected" : "results__channelBody"}
+      onClick={selectChannel}
+    >
       <div className="results__channelAvatar">
       <Avatar 
-        src={channel.snippet.thumbnails.high.url}
-        alt={channel.snippet.channelTitle}
+        src={channelItem.snippet.thumbnails.high.url}
+        alt={channelItem.snippet.channelTitle}
         className={classes.avatar}
-        onClick={selectChannel}
       />
       </div>
       <div className="results__channelTitle">
-        <p>{channel.snippet.title}</p>
+        <p>{channelItem.snippet.title}</p>
 
       </div>
 
