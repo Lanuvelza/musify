@@ -5,11 +5,11 @@ import "./styles/Album.css";
 
 
 
-function Album({album, spotify}) {
-  const [{albums}, dispatch] = useDataLayerValue(); 
+function Album({spotify}) {
+  const [{album, albums}, dispatch] = useDataLayerValue(); 
 
   const handleClick = () => {
-    spotify.getAlbum(album.id)
+    spotify.getAlbum(album?.id)
     .then((album) => {
       console.log(album);
       console.log(album.tracks);
@@ -25,7 +25,7 @@ function Album({album, spotify}) {
   }
 
   const playAlbum = () => {
-    spotify.getAlbum(album.id)
+    spotify.getAlbum(album?.id)
     .then((album) => {
       console.log(album);
       console.log(album.tracks);
@@ -50,14 +50,14 @@ function Album({album, spotify}) {
     <div className="album__info">
       {album && 
         <img 
-          src={album.images[0].url}
-          alt={album.name} 
+          src={album?.images[0].url}
+          alt={album?.name} 
           onClick={handleClick}/>}
       <div className="album__infoText">
-        {album.id === albums[0].id ? 
+        {album?.id === albums[0].id ? 
         <>
           <h1><strong>Latest Release</strong></h1>
-          <h2 onClick={handleClick}>{album.name}</h2>
+          <h2 onClick={handleClick}>{album?.name}</h2>
           <div className="album__play">
             <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
             <div className="album__playMessage">
@@ -66,7 +66,7 @@ function Album({album, spotify}) {
           </div>
         </> : 
         <>
-          <h2 onClick={handleClick}>{album.name}</h2>
+          <h2 onClick={handleClick}>{album?.name}</h2>
           <div className="album__play">
             <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />
             <div className="album__playMessage">

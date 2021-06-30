@@ -8,6 +8,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .instagram__profile__header {
@@ -24,9 +25,15 @@
 
 .instagram__profile__bio {
   text-align: left;
+  word-wrap: break-word;
+  overflow-y: scroll;
   width: 15vw;
   height: 40vh;
   padding: 30px;
-  background: linear-gradient(to bottom, rgba(5,4,4,0.5), transparent);
-  align-self: center;
+  padding-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent);
 }
+

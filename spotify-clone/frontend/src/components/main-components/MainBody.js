@@ -14,6 +14,7 @@ import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
 import InstagramSearchResults from "./InstagramSearchResults";
 import InstagramBody from "../instagram-components/InstagramBody";
 import SearchSelection from "./SearchSelection";
+import Home from "../home-components/Home";
 
 function MainBody({ spotify }) {
   const [{searching, artists}] = useDataLayerValue();
@@ -57,9 +58,10 @@ function MainBody({ spotify }) {
           </div>
 
         </div>
-        {view === "SPOTIFY" && <SpotifyBody spotify={spotify} /> }
-        {view === "YOUTUBE" && <YoutubeBody /> }
-        {view === "INSTAGRAM" && <InstagramBody /> }
+        {view === "HOME" && <Home />}
+        {view === "SPOTIFY" && <SpotifyBody spotify={spotify} />}
+        {view === "YOUTUBE" && <YoutubeBody />}
+        {view === "INSTAGRAM" && <InstagramBody />}
       </div>
     </div>
     <Footer />

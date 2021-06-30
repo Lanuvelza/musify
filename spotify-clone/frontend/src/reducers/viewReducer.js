@@ -1,5 +1,5 @@
 export const initialViewState = {
-  view: null,
+  view: "HOME",
 }
 
 const viewReducer = (state, action) => {

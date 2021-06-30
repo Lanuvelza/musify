@@ -41,7 +41,7 @@ function Sidebar({ spotify }) {
     // });
     viewDispatch({
       type: "SET_VIEW",
-      view: null
+      view: "HOME"
     });
   }
 

@@ -28,7 +28,7 @@ function InstagramSearchResults({userItem}) {
       
       instagramDispatch({
         type: "SET_INSTAGRAM_USER",
-        instagram__user: userItem
+        instagram__user: user
       })
     })
 
@@ -48,6 +48,11 @@ function InstagramSearchResults({userItem}) {
         type: "SET_POST",
         post: latest_post
       })
+
+      instagramDispatch({
+        type: "SET_LATEST_POST",
+        latest_post: latest_post
+      })
     })
   }
 
@@ -55,7 +60,7 @@ function InstagramSearchResults({userItem}) {
   return (
     <div 
       key={userItem?.pk} 
-      className={userItem.pk === instagram__user?.pk ? "results__userBody__selected" : "results__userBody"}
+      className={userItem.pk === instagram__user?.id ? "results__userBody__selected" : "results__userBody"}
       onClick={selectUser}
     >
       <div className="results__userAvatar">

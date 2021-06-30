@@ -51,10 +51,30 @@ function SpotifySearchResults({artistItem, spotify}) {
       const albums = filterAblumsByMarket(results.items, "US");
       console.log(albums);
 
+      const latest_album = albums[0]; 
+
       dispatch({
         type: "SET_ALBUMS", 
         albums: albums
       })
+
+      dispatch({
+        type: "SET_ALBUM", 
+        album: latest_album
+      })
+
+      dispatch({
+        type: "SET_LATEST_ALBUM",
+        latest_album: latest_album
+      })
+
+      spotify.getAlbum(latest_album.id)
+      .then((album) => {
+        dispatch({
+          type: "SET_LATEST_ALBUM_TRACKS",
+          latest_album_tracks: album.tracks.items
+        })
+      }) 
     })
     .then(() => {
       spotify.getArtistTopTracks(artistItem.id, "US")
@@ -69,11 +89,6 @@ function SpotifySearchResults({artistItem, spotify}) {
       dispatch({
         type: "SET_ARTIST",
         artist: artistItem
-      })
-
-      dispatch({
-        type: "SET_ALBUM", 
-        album: null
       })
     });
   }

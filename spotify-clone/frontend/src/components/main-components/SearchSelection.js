@@ -5,6 +5,7 @@ import { useInstagramDataLayerValue } from '../../contexts/InstagramDataLayer';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
 import "./styles/SearchSelection.css"; 
 import SaveIcon from "@material-ui/icons/Save";
+import { useViewDataLayerValue } from '../../contexts/ViewDataLayer';
 
 const useStyles = makeStyles({
   profile_picture: {
@@ -34,6 +35,7 @@ function SearchSelection() {
   const [{artist, searching}, dispatch] = useDataLayerValue(); 
   const [{channel}, youtubeDispatch] = useYoutubeDataLayerValue();
   const [{instagram__user}, instagramDispatch] = useInstagramDataLayerValue();
+  const [{}, viewDispatch] = useViewDataLayerValue();
 
   const classes = useStyles();
 
@@ -41,6 +43,10 @@ function SearchSelection() {
     dispatch({
       type: "SET_SEARCHING",
       searching: false
+    })
+    viewDispatch({
+      type: "SET_VIEW",
+      view: "HOME"
     })
   }
   

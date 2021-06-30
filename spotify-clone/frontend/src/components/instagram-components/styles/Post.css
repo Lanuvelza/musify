@@ -1,5 +1,5 @@
 .post {
-  width: 48vw;
+  /* width: 48vw; */
   margin: 20px;
   padding: 20px;
   background: linear-gradient(to bottom, rgba(5,4,4, 0.8) 30%, transparent );
@@ -23,10 +23,6 @@
   height: 600px;
   object-fit: contain;
 }
-
-/* hr {
-
-} */
 
 .post__caption {
   margin: 20px;

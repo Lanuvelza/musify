@@ -5,10 +5,12 @@ export const initialState = {
   playing: false,
   item: null,
   tracks: null,
+  latest_album_tracks: null,
   current_track: null,
   artist: null, 
   artists: null,
   album: null,
+  latest_album: null,
   albums: null,
   // current_playlist: null,
   uri: null, 
@@ -55,6 +57,11 @@ const reducer = (state, action) => {
         ...state,
         tracks: action.tracks,
       };
+    case "SET_LATEST_ALBUM_TRACKS": 
+      return {
+        ...state, 
+        latest_album_tracks: action.latest_album_tracks
+      }
     case "SET_CURRENT_TRACK":
       return {
         ...state,
@@ -75,6 +82,11 @@ const reducer = (state, action) => {
         ...state,
         album: action.album,
       };
+    case "SET_LATEST_ALBUM":
+      return {
+        ...state,
+        latest_album: action.latest_album
+      }
     case "SET_ALBUMS":
       return {
         ...state,

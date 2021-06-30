@@ -42,6 +42,11 @@ function YoutubeSearchResults({channelItem}) {
         type: "SET_VIDEO", 
         video: latestVideo
       })
+
+      youtubeDispatch({
+        type: "SET_LATEST_VIDEO",
+        latest_video: latestVideo
+      })
     })
 
     searchVideosByQuery(query)

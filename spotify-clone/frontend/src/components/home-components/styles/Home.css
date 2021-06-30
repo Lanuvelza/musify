@@ -1,0 +1,145 @@
+.defaultHome {
+  display: flex;
+  justify-content: center;
+  color: lightsteelblue;
+  font-size: large;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 20px black;
+  position: relative;
+  top: 10%
+}
+
+.homeBody {
+  display: flex;
+}
+
+.home__left {
+  width: 40vw;
+  margin: 20px;
+  padding: 10px;
+  background: linear-gradient(to bottom, rgba(5, 4, 4, 0.7), transparent 80%);
+  box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
+}
+
+.home__left:hover {
+  transition: 200ms transform ease-in;
+  transform: scale(1.08);
+  cursor: pointer;
+}
+
+.left__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: -5px;
+}
+
+.left__header__title {
+  text-align: center;
+}
+
+.left__header__title > h2 {
+  font-size: 2em;
+  color: lightsteelblue;
+}
+
+.left__header__title > p {
+  font-size: 1.3em;
+  color: lightsteelblue;
+}
+
+.left__body {
+  padding: 5px;
+}
+
+.left__body__header {
+  display: flex;
+  align-items: center;
+}
+
+.left__album {
+  height: 20vh;
+  margin: 20px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.album__title > h2 {
+  color: lightsteelblue;
+}
+
+.album__title > h3 {
+  color: pink;
+}
+
+.play__button {
+  font-size: 50px !important;
+}
+
+.song__body {
+  margin-bottom: 20px;
+  height: 20vh;
+  background: linear-gradient( rgb(124, 120, 120), rgb(91, 87, 115) 120%);
+  padding: 10px;
+  overflow-y: scroll;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.home__right {
+  width: 50vw;
+  margin: 20px; 
+  padding: 10px;
+  background: linear-gradient(to bottom, rgba(5, 4, 4, 0.7), transparent 80%);
+  box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
+}
+
+.home__right:hover {
+  transition: 200ms transform ease-in;
+  transform: scale(1.08);
+  cursor: pointer;
+}
+
+.right__header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right__header__title__left {
+  display: flex;
+  align-items: center;
+}
+
+.right__header__title__right {
+  width: 15vw;
+  display: flex;
+  align-items: center;
+}
+
+.right__header__body {
+  padding: 10px;
+  margin: 10px;
+}
+
+.right__header__body > h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: pink;
+}
+
+.youtube__player {
+  width: 40vw;
+  opacity: 0.7;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.youtube__description {
+  margin: 5px;
+  padding: 10px;
+  height: 7vh;
+  overflow-y: scroll;
+  background: rgb(5, 4, 4, 0.8);
+  word-wrap: break-word;
+  color: lightsteelblue;
+}
