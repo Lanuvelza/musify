@@ -19,6 +19,9 @@ const useStyles = makeStyles({
     borderStyle: 'solid', 
     borderColor: 'white',
     borderWidth: '5px',
+    '&:hover': {
+      cursor: 'pointer',
+    }
   },
   youtube_avatar: {
     height: '100px',
@@ -27,6 +30,9 @@ const useStyles = makeStyles({
     borderStyle: 'solid', 
     borderColor: 'white',
     borderWidth: '5px',
+    '&:hover': {
+      cursor: 'pointer',
+    }
   },
   instagram_avatar: {
     height: '100px',
@@ -35,6 +41,9 @@ const useStyles = makeStyles({
     borderStyle: 'solid', 
     borderColor: 'white',
     borderWidth: '5px',
+    '&:hover': {
+      cursor: 'pointer',
+    }
   }
 
 
@@ -68,6 +77,13 @@ function Home() {
     })
   }
 
+  const selectYoutube = () => {
+    viewDispatch({
+      type: "SET_VIEW", 
+      view: "YOUTUBE"
+    })
+  }
+
   const playerOnReady = (event) => {
     event.target.pauseVideo();
 
@@ -82,6 +98,13 @@ function Home() {
     youtubeDispatch({
       type: "SET_YOUTUBE_PLAYING",
       youtube__playing: true
+    })
+  }
+
+  const selectInstagram = () => {
+    viewDispatch({
+      type: "SET_VIEW", 
+      view: "INSTAGRAM"
     })
   }
 
@@ -150,6 +173,7 @@ function Home() {
                 src={channel?.snippet?.thumbnails?.high?.url}
                 alt={channel?.snippet?.title}
                 className={classes.youtube_avatar}
+                onClick={selectYoutube}
               />
               <div className="right__header__title">
                 <h2>{channel?.snippet?.title}</h2>
@@ -183,6 +207,7 @@ function Home() {
             src={`https://workers.iantyylam.workers.dev/${instagram__user?.profile_pic_url_hd}`}
             alt={instagram__user?.full_name}
             className={classes.instagram_avatar}
+            onClick={selectInstagram}
           />
           <div className="instagram__title">
             <h2>{instagram__user?.full_name}</h2>

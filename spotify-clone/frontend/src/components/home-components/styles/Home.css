@@ -166,6 +166,7 @@
 .home__right__bottom {
   width: 45vw;
   margin: 10px; 
+  margin-top: 20px;
   padding: 10px;
   background: linear-gradient(to top, rgba(5, 4, 4, 0.7), transparent 80%);
   box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
@@ -201,6 +202,7 @@
   padding: 20px;
   background: rgba(5, 4, 4, 0.3);
   word-wrap: break-word;
+  color: lightsteelblue;
 }
 
 
