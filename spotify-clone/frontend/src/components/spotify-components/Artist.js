@@ -30,9 +30,9 @@ const useStyles = makeStyles({
 })
 
 
-function Artist({artist, albums, spotify}) {
-  const [{} ,dispatch] = useDataLayerValue();
-  const props = { backgroundImage: albums ? albums[0].images[0].url : artist.images[0].url}
+function Artist({artist, spotify}) {
+  const [{albums} ,dispatch] = useDataLayerValue();
+  const props = { backgroundImage: albums ? albums[0]?.images[0].url : artist.images[0]?.url}
   const classes = useStyles(props);
 
   const handleClick = () => {
@@ -46,10 +46,10 @@ function Artist({artist, albums, spotify}) {
 
         dispatch({
           type: "SET_ALBUM",
-          album: null
+          album: albums[0]
         })
-    });
-  }
+      });
+    }
 
 
   return (

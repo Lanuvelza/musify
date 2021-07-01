@@ -1,12 +1,12 @@
 .songRowHome {
-  margin: 10px;
+  margin: 5px;
   padding: 20px;
   display: flex;
   align-items: center;
   z-index: 100;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .songRowHome:hover {
@@ -24,7 +24,7 @@
   color: white;
   background-color: black;
   opacity: 0.8;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .songRowHome__info {

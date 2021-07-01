@@ -27,6 +27,14 @@ const useStyles = makeStyles({
     borderStyle: 'solid', 
     borderColor: 'white',
     borderWidth: '5px',
+  },
+  instagram_avatar: {
+    height: '100px',
+    width: '100px',
+    marginRight: '20px',
+    borderStyle: 'solid', 
+    borderColor: 'white',
+    borderWidth: '5px',
   }
 
 
@@ -77,6 +85,15 @@ function Home() {
     })
   }
 
+  const formatTimestamp = (time) => {
+    if (!time) {
+      return;
+    }
+    const date = new Date(time * 1000);
+    const timestamp = date.toISOString(); 
+    return timestamp;
+  }
+
   if (!artist && !channel && !instagram__user) {
     return (
       <div className="defaultHome"><h1>Find out what your favourite artist is up to...</h1></div>
@@ -86,6 +103,7 @@ function Home() {
 
   return (
   <div className="homeBody">
+
     {artist && 
     <div className="home__left">
       <div className="left__header">
@@ -120,46 +138,75 @@ function Home() {
           <SongRowHome track={track} key={track.id} />
         ))}
       </div>
-    </div>
-    }
+    </div>}
+
     <div className="home__right">
-      <div className="right__header">
-        <div className="right__header__title__left">
+
+      {channel && 
+        <div className="home__right__top">
+          <div className="right__header">
+            <div className="right__header__title__left">
+              <Avatar
+                src={channel?.snippet?.thumbnails?.high?.url}
+                alt={channel?.snippet?.title}
+                className={classes.youtube_avatar}
+              />
+              <div className="right__header__title">
+                <h2>{channel?.snippet?.title}</h2>
+                <p>{channel?.statistics?.subscriberCount} Subscribers</p>
+              </div> 
+            </div>
+            <div className="right__header__title__right">
+              <h3>Latest Upload by {channel?.snippet?.title}</h3>
+            </div>
+          </div>
+          <div className="right__header__body">
+            <Youtube
+              videoId={latest_video?.contentDetails?.videoId}
+              className={youtube__playing ? "youtube__player__playing" : "youtube__player" }
+              opts={opts}
+              onReady={playerOnReady}
+              onPlay={playerOnPlay}
+            /> 
+            <h2>{replaceWithQuotations(latest_video?.snippet?.title)}</h2>
+            <p><TimeAgo date={latest_video?.snippet?.publishedAt} /></p>
+            <div className="youtube__description">
+              <p>{latest_video?.snippet?.description}</p>
+            </div>
+          </div>
+        </div>}
+
+      {instagram__user && 
+      <div className="home__right__bottom">
+        <div className="instagram__header">
           <Avatar
-            src={channel?.snippet?.thumbnails?.high?.url}
-            alt={channel?.snippet?.title}
-            className={classes.youtube_avatar}
+            src={`https://workers.iantyylam.workers.dev/${instagram__user?.profile_pic_url_hd}`}
+            alt={instagram__user?.full_name}
+            className={classes.instagram_avatar}
           />
-          <div className="right__header__title">
-            <h2>{channel?.snippet?.title}</h2>
-            <p>{channel?.statistics?.subscriberCount} Subscribers</p>
-          </div> 
+          <div className="instagram__title">
+            <h2>{instagram__user?.full_name}</h2>
+            <p>{instagram__user?.edge_followed_by.count} Followers</p>
+          </div>
         </div>
-        <div className="right__header__title__right">
-          <h3>Latest Upload by {channel?.snippet?.title}</h3>
+        <div className="post__body"> 
+          <div className="post__body__left">
+            <p>Last post from <TimeAgo date={formatTimestamp(latest_post?.node?.taken_at_timestamp)} />.</p>
+            <p>{latest_post?.node?.edge_media_to_caption?.edges?.[0]?.node?.text}</p>
+          </div>
+          <img
+            src={`https://workers.iantyylam.workers.dev/${latest_post?.node?.display_url}`}
+            alt={latest_post?.node?.shortcode}
+            className={"instagram__photo"}
+          />
         </div>
-      </div>
-      <div className="right__header__body">
-        <Youtube
-          videoId={latest_video?.contentDetails?.videoId}
-          className={youtube__playing ? "youtube__player__playing" : "youtube__player" }
-          opts={opts}
-          onReady={playerOnReady}
-          onPlay={playerOnPlay}
-        /> 
-        <h2>{replaceWithQuotations(latest_video?.snippet?.title)}</h2>
-        <p><TimeAgo date={latest_video?.snippet?.publishedAt} /></p>
-        <div className="youtube__description">
-          <p>{latest_video?.snippet?.description}</p>
-        </div>
-      </div>
-      <hr />
-      <div className="instagram__body">
-        
-      </div>
+
+      </div>}
+
     </div>
+
   </div>
-  );
+ );
 }
 
 export default Home;

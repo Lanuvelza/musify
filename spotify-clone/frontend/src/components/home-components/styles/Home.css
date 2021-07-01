@@ -11,19 +11,21 @@
 
 .homeBody {
   display: flex;
+  margin-bottom: 85px;
 }
 
 .home__left {
+  /* height: 60vh; */
   width: 40vw;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
-  background: linear-gradient(to bottom, rgba(5, 4, 4, 0.7), transparent 80%);
+  background: linear-gradient(to bottom, rgba(5, 4, 4, 0.7), transparent 120%);
   box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
 }
 
 .home__left:hover {
   transition: 200ms transform ease-in;
-  transform: scale(1.08);
+  transform: scale(1.04);
   cursor: pointer;
 }
 
@@ -41,12 +43,12 @@
 
 .left__header__title > h2 {
   font-size: 2em;
-  color: lightsteelblue;
+  /* color: lightsteelblue; */
 }
 
 .left__header__title > p {
   font-size: 1.3em;
-  color: lightsteelblue;
+  /* color: lightsteelblue; */
 }
 
 .left__body {
@@ -78,29 +80,29 @@
 
 .song__body {
   margin-bottom: 20px;
-  height: 20vh;
-  background: linear-gradient( rgb(124, 120, 120), rgb(91, 87, 115) 120%);
-  padding: 10px;
+  background: linear-gradient( rgba(124, 120, 120, 0.3), rgba(91, 87, 115, 0.3) 120%);
+  padding: 2px;
   overflow-y: scroll;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 
-.home__right {
-  width: 50vw;
-  margin: 20px; 
+.home__right__top {
+  width: 45vw;
+  margin: 10px; 
   padding: 10px;
   background: linear-gradient(to bottom, rgba(5, 4, 4, 0.7), transparent 80%);
   box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
 }
 
-.home__right:hover {
+.home__right__top:hover {
   transition: 200ms transform ease-in;
-  transform: scale(1.08);
+  transform: scale(1.02);
   cursor: pointer;
 }
 
 .right__header {
+  width: 45vw;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -129,17 +131,85 @@
 }
 
 .youtube__player {
-  width: 40vw;
-  opacity: 0.7;
+  width: 41vw;
+  opacity: 0.5;
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
 }
+@keyframes youtube-fade-in {
+  0% {opacity: 0.5;}
+  50% {opacity: 0.75;}
+  100% {opacity: 1;}
+}
+
+.youtube__player:hover {
+  animation: youtube-fade-in 0.4s;
+  opacity: 1;
+}
+
+.youtube__player__playing {
+  width: 40vw;
+  opacity: 1;
+}
+
 
 .youtube__description {
+  width: 40vw;
   margin: 5px;
   padding: 10px;
   height: 7vh;
   overflow-y: scroll;
-  background: rgb(5, 4, 4, 0.8);
+  background: rgb(5, 4, 4, 0.3);
   word-wrap: break-word;
   color: lightsteelblue;
+}
+
+.home__right__bottom {
+  width: 45vw;
+  margin: 10px; 
+  padding: 10px;
+  background: linear-gradient(to top, rgba(5, 4, 4, 0.7), transparent 80%);
+  box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.5);
+}
+
+.home__right__bottom:hover {
+  transition: 200ms transform ease-in;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+
+.instagram__header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.post__body {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.post__body__left {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25vh;
+  margin-right: 20px;
+  padding: 20px;
+  background: rgba(5, 4, 4, 0.3);
+  word-wrap: break-word;
+}
+
+
+.instagram__photo {
+  width: 470px;
+  height: 470px;
+  border-style: solid;
+  border-color: white;
+  object-fit: contain;
+  margin: auto;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
 }
