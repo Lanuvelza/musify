@@ -7,6 +7,7 @@ import { filterChannelsByVisibleSubscriberCount, searchChannels, sortChannelsByS
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
 import { filterByVerification, searchInstagram } from "../api/instagram/instagram";
 import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
+import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 
 
 function Header({ spotify }) {
@@ -14,6 +15,7 @@ function Header({ spotify }) {
   const [{ user, searchmode }, dispatch] = useDataLayerValue(); 
   const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
   const [{}, instagramDispatch] = useInstagramDataLayerValue();
+  const [{}, viewDispatch] = useViewDataLayerValue();
   const [search, setSearch] = useState("");
 
   const handleSubmit = (event) => {
@@ -69,6 +71,11 @@ function Header({ spotify }) {
       dispatch({
         type: "SET_SEARCHING", 
         searching: true
+      })
+
+      viewDispatch({
+        type: "SET_VIEW",
+        view: "SEARCH"
       })
 
       setSearch("");

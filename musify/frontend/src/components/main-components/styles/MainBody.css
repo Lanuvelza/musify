@@ -29,7 +29,7 @@
 
 .searchResults__body {
   margin: 20px;
-  height: 95vh;
+  /* height: 95vh; */
   width: 45vw;
   padding: 20px;
   background: linear-gradient(to bottom, rgba(5,4,4, 0.5), transparent 120%);

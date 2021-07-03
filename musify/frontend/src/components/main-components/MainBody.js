@@ -30,26 +30,32 @@ function MainBody({ spotify }) {
         <div className="main__header">
           <Header spotify={spotify} />
           <div className="search__body">
-            {searching &&
+            {view === "SEARCH" &&
             <>
             <div className="searchResults__body">
               <h2>Spotify Artists</h2>
               <div className="spotifySearchResults__body">
-                {artists?.items?.length && artists?.items?.map((item) => (
+                {searching && artists?.items?.length ? 
+                
+                artists?.items?.map((item) => (
                 <SpotifySearchResults artistItem={item} key={item.id} spotify={spotify}/>
-                ))}
+                )) : <p>No results found.</p>}
               </div>
               <h2>Youtube Channels</h2>
               <div className="youtubeSearchResults__body">
-                {channels?.length && channels?.map((channel) => (
+                {searching && channels?.length ? 
+
+                channels?.map((channel) => (
                   <YoutubeSearchResults channelItem={channel} key={channel.id.channelId} />
-                ))}
+                )) : <p>No results found.</p>}
               </div>
               <h2>Instagram Users</h2>
               <div className="instagramSearchResults__body">
-                {instagram__users?.length && instagram__users?.map((user) => (
+                {searching && instagram__users?.length ? 
+                
+                instagram__users?.map((user) => (
                   <InstagramSearchResults userItem={user} key={user.pk} />
-                ))}
+                )): <p>No results found.</p>}
               </div>
             </div>
             <SearchSelection /> 
