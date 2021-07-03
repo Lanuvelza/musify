@@ -3,8 +3,8 @@ const axios = require('axios');
 require('dotenv').config();
 
 const credentials = {
-  username: process.env.REACT_APP_INSTAGRAM_USERNAME,
-  password: process.env.REACT_APP_INSTAGRAM_PASSWORD
+  username: process.env.INSTAGRAM_USERNAME,
+  password: process.env.INSTAGRAM_PASSWORD
 }
 
 const client = new Instagram({ username: credentials.username, password: credentials.password })

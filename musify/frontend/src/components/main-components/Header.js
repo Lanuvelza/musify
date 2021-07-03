@@ -3,9 +3,9 @@ import { Search } from "@material-ui/icons";
 import "./styles/Header.css";
 import { Avatar } from "@material-ui/core"; 
 import { useDataLayerValue } from "../../contexts/DataLayer";
-import { filterChannelsByVisibleSubscriberCount, searchChannels, sortChannelsBySubscriberCount } from "../youtube/youtube";
+import { filterChannelsByVisibleSubscriberCount, searchChannels, sortChannelsBySubscriberCount } from "../api/youtube/youtube";
 import { useYoutubeDataLayerValue } from "../../contexts/YoutubeDataLayer";
-import { filterByVerification, searchInstagram } from "../instagram/instagram";
+import { filterByVerification, searchInstagram } from "../api/instagram/instagram";
 import { useInstagramDataLayerValue } from "../../contexts/InstagramDataLayer";
 
 
