@@ -56,6 +56,10 @@ function Video() {
         onPlay={playerOnPlay}
         onStateChange={playerOnStateChange}
       />
+      <div className="video__description">
+        <h2>Channel: {video?.snippet?.channelTitle}</h2>
+        <p>{video?.snippet?.description}</p>
+      </div>
     </div>
   )
 }
