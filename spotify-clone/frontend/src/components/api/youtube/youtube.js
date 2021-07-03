@@ -1,6 +1,6 @@
 const axios = require('axios');
 const api_key = process.env.REACT_APP_YOUTUBE_API_KEY;
-const baseURL = 'https://www.googleapis.com/youtube/v3';
+const baseURL = 'http://www.googleapis.com/youtube/v3';
 
 
 // sort channels by the number of suscribers in descending order
@@ -108,6 +108,11 @@ export const replaceWithQuotations = (string) => {
   if (!string) {
     return null;
   }
+
+  if (string.includes("&quot;")) {
+    return string.replace(/&quot;/g, '\"'); 
+  }
+
   return string.replace(/&#([0-9]{1,4});/gi , function(match, numStr) {
     const num = parseInt(numStr, 10);
     return String.fromCharCode(num);
