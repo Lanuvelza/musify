@@ -17,6 +17,7 @@ function InstagramProfile() {
         alt={instagram__user?.full_name}
         className={"instagram__profile__picture"}
       />
+      <h2>{instagram__user?.edge_followed_by?.count} Followers</h2>
       <div className="instagram__profile__bio">
         <p>{instagram__user?.biography}</p>
       </div>
