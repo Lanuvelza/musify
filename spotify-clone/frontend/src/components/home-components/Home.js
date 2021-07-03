@@ -9,7 +9,8 @@ import "./styles/Home.css";
 import SongRowHome from "./SongRowHome";
 import TimeAgo from 'react-timeago';
 import Youtube from "react-youtube";
-import { replaceWithQuotations } from "../youtube/youtube";
+import { replaceWithQuotations } from "../api/youtube/youtube";
+import { formatTimestamp } from "../api/instagram/instagram";
 
 const useStyles = makeStyles({
   spotify_avatar: {
@@ -106,15 +107,6 @@ function Home() {
       type: "SET_VIEW", 
       view: "INSTAGRAM"
     })
-  }
-
-  const formatTimestamp = (time) => {
-    if (!time) {
-      return;
-    }
-    const date = new Date(time * 1000);
-    const timestamp = date.toISOString(); 
-    return timestamp;
   }
 
   if (!artist && !channel && !instagram__user) {

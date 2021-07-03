@@ -1,21 +1,12 @@
 import React from 'react';
 import TimeAgo from 'react-timeago'
 import { useInstagramDataLayerValue } from '../../contexts/InstagramDataLayer';
+import { formatTimestamp } from '../api/instagram/instagram';
 import "./styles/Post.css"; 
 
 
 function Post() {
   const [{posts, post}, instagramDispatch] = useInstagramDataLayerValue();
-
-
-  const formatTimestamp = (time) => {
-    if (!time) {
-      return;
-    }
-    const date = new Date(time * 1000);
-    const timestamp = date.toISOString(); 
-    return timestamp;
-  }
 
   return (
     <div className="post">

@@ -1,13 +1,7 @@
 const axios = require('axios');
 
-const credentials = {
-  username: process.env.REACT_APP_INSTAGRAM_USERNAME,
-  password: process.env.REACT_APP_INSTAGRAM_PASSWORD
-}
-
+// authorizes Instagram account 
 export const authorizeInstagram = () => {
-  const { username, password } = credentials;  
-  console.log(username, password);
   return axios.post(`/authorize`)
   .then((response) => {
     console.log(response)
@@ -16,6 +10,7 @@ export const authorizeInstagram = () => {
   
 }
 
+// searches for users from the given query 
 export const searchInstagram = (query) => {
   return axios.get(`/search/${query}`)
   .then((response) => {
@@ -24,11 +19,13 @@ export const searchInstagram = (query) => {
   })
 }
 
+// filter users by verified as celebrities from Instagram 
 export const filterByVerification = (users) => {
   console.log(users);
   return users.filter((user) => user.is_verified === true); 
 }
 
+// get the user 
 export const getUser = (username) => {
   console.log(username); 
   return axios.get(`/user/${username}`)
@@ -38,7 +35,7 @@ export const getUser = (username) => {
   })
 }
 
-
+// get the users posts
 export const getUserPosts = (userid) => {
   console.log(userid);
   return axios.get(`/user/${userid}/posts`)
@@ -48,3 +45,13 @@ export const getUserPosts = (userid) => {
   })
 }
 
+// formats the Timestamp from the Instagram post data to the correct ISOString
+export const formatTimestamp = (time) => {
+  if (!time) {
+    return 
+  }
+
+  const date = new Date(time * 1000); 
+  const timestamp = date.toISOString();
+  return timestamp; 
+}
