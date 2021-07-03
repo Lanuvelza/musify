@@ -8,22 +8,12 @@
   background-color: #040404;
 }
 
-.sidebar > hr {
-  border: 1px solid #282828;
-  width: 90%;
-  margin: 10px auto;
+.logo {
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 5px 5px 100px white;
+  font-size: 45px;
+  margin: 20px;
 }
 
-.sidebar__logo {
-  height: 100px;
-  width: auto;
-  padding: 10px;
-  margin: auto;
-  cursor: pointer;
-}
 
-.sidebar__title {
-  margin-left: 5px;
-  padding: 5px;
-  font-size: 12px;
-}
