@@ -6,10 +6,9 @@ function Login() {
   return (
   <div className="login">
     <div className="loginCard">
-      <img 
-        src="https://music-b26f.kxcdn.com/wp-content/uploads/2017/06/635963274692858859903160895_spotify-logo-horizontal-black.jpg"
-        alt="Spotify logo"
-      />
+      <div className="loginCard__logo">
+        <h1>musify.</h1>
+      </div>
       <a href={loginUrl}>LOGIN WITH SPOTIFY</a>
     </div>
   </div>
