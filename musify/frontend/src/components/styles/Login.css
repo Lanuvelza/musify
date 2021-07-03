@@ -1,0 +1,43 @@
+.login {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: rgb(230,110,207);
+  background: linear-gradient(29deg, rgba(230,110,207,1) 25%, rgba(129,204,245,1) 100%);
+}
+
+.loginCard {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 500px;
+  background-color: black;
+  border-style: solid;
+  border-color: black;
+  border-radius: 24px;
+}
+
+.loginCard > img {
+  margin: auto;
+  width: 450px;
+  height: 200px;
+  border-radius: 24px;
+}
+
+.loginCard > a {
+  padding: 20px;
+  border-radius: 99px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background-color: #1db954;
+  text-align: center;
+  width: 38%;
+  margin: auto;
+}
+
+.loginCard > a:hover {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}

@@ -1,0 +1,40 @@
+.selection__body {
+  margin: 20px;
+  margin-left: 5px;
+  padding: 20px;
+  height: 50vh;
+  width: 25vw;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.selection__body > h4 {
+  font-size: 36px;
+  color: aliceblue;
+}
+
+.selected__tab {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  background: linear-gradient(to right, rgba(5, 4, 4, 0.4), transparent);
+}
+
+.selected__tab > h6 {
+  font-size: 24px;
+  color: aliceblue;
+}
+
+.selected__tabInfo {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: pink;
+}
+
+

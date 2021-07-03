@@ -1,0 +1,39 @@
+.instagram__profile {
+  width: 15vw;
+  height: 66vh;
+  padding: 20px;
+  margin: 20px;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), transparent);
+  color: lightsteelblue;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instagram__profile__header {
+  margin-bottom: 20px;
+}
+
+.instagram__profile__picture {
+  width: 14vw;
+  margin: auto;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: white;
+}
+
+.instagram__profile__bio {
+  text-align: left;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  width: 15vw;
+  height: 40vh;
+  padding: 30px;
+  padding-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.4), transparent);
+}
+

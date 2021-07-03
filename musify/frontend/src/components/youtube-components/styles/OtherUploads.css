@@ -1,0 +1,21 @@
+.othervideo__body {
+  height: 35vh;
+  margin: 20px;
+  margin-left: 5px;
+  margin-bottom: 50px;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(5,4,4, 0.2) 20%, transparent 60%);
+  color: lightsteelblue;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+.othervideo__header {
+  margin-bottom: -15px;
+}
+
+.othervideo__library {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}

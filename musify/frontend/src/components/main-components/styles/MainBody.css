@@ -1,0 +1,67 @@
+.player__body {
+  display: flex;
+}
+
+.main__body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 0.8;
+  color: white;
+  padding: 30px;
+  background: linear-gradient(rgb(91,87, 115), rgba(0, 0, 0, 1));
+  overflow-y: overlay;
+}
+
+.main__body::-webkit-scrollbar {
+  display: none;
+}
+
+.main__header {
+  margin-bottom: 20px;
+}
+
+.search__body {
+  display: flex;
+  margin-bottom: 25px;
+  color: lightsteelblue;
+}
+
+.searchResults__body {
+  margin: 20px;
+  height: 95vh;
+  width: 45vw;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.5), transparent 120%);
+}
+
+.spotifySearchResults__body {
+  /* height: 30vh; */
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  background: linear-gradient(to right, rgba(5,4,4, 0.2), transparent 120%);
+
+}
+
+.youtubeSearchResults__body {
+  /* height: 30vh; */
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  background: linear-gradient(to right, rgba(5,4,4, 0.2), transparent 120%);
+
+}
+
+.instagramSearchResults__body {
+  /* height: 30vh; */
+  margin: 10px;
+  display: flex;
+  overflow-x: scroll;
+  background: linear-gradient(to right, rgba(5,4,4, 0.2), transparent 120%);
+
+}

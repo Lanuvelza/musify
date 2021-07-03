@@ -1,0 +1,17 @@
+.channelvideo__body {
+  height: 35vh;
+  margin: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 20px;
+  padding-bottom: 70px;
+  background: linear-gradient(to bottom, rgba(5,4,4, 0.2) 20%, transparent 60%);
+  color: lightsteelblue;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.channelvideo__library {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}
