@@ -1,5 +1,6 @@
 import { PlayCircleFilled } from "@material-ui/icons";
 import React from "react"; 
+import TimeAgo from 'react-timeago';
 import { useDataLayerValue } from "../../contexts/DataLayer"; 
 import "./styles/Album.css"; 
 
@@ -57,6 +58,7 @@ function Album({spotify}) {
         {album?.id === albums[0].id ? 
         <>
           <h1><strong>Latest Release</strong></h1>
+          <h1><TimeAgo date={new Date(album?.release_date)} /></h1>
           <h2 onClick={handleClick}>{album?.name}</h2>
           <div className="album__play">
             <PlayCircleFilled className={"album__playButton"} onClick={playAlbum} />

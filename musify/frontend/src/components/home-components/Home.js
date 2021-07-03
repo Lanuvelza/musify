@@ -143,6 +143,7 @@ function Home() {
           />
         <div className="album__title">
           <h2><strong>Latest Release</strong></h2>
+          <h2><TimeAgo date={new Date(latest_album?.release_date)} /></h2>
           <h3>{latest_album?.name}</h3>
           <PlayCircleFilled className={"play__button"} onClick={playAlbum} />
         </div>
