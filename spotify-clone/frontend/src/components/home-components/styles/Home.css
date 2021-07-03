@@ -43,12 +43,10 @@
 
 .left__header__title > h2 {
   font-size: 2em;
-  /* color: lightsteelblue; */
 }
 
 .left__header__title > p {
   font-size: 1.3em;
-  /* color: lightsteelblue; */
 }
 
 .left__body {
@@ -88,7 +86,6 @@
 }
 
 .home__right__top {
-  width: 45vw;
   margin: 10px; 
   padding: 10px;
   background: linear-gradient(to bottom, rgba(5, 4, 4, 0.7), transparent 80%);
@@ -164,7 +161,6 @@
 }
 
 .home__right__bottom {
-  width: 45vw;
   margin: 10px; 
   margin-top: 20px;
   padding: 10px;

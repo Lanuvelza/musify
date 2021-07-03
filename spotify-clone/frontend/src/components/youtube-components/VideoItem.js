@@ -1,6 +1,6 @@
 import React from 'react';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
-import { replaceWithQuotations } from '../youtube/youtube';
+import { replaceWithQuotations } from '../api/youtube/youtube';
 import "./styles/VideoItem.css";
 
 

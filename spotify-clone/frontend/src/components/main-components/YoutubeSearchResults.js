@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles } from "@material-ui/core";
 import "./styles/YoutubeSearchResults.css";
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
-import { filterVideosOnly, getChannelVideos, searchVideosByQuery } from '../youtube/youtube';
+import { filterVideosOnly, getChannelVideos, searchVideosByQuery } from '../api/youtube/youtube';
 
 const useStyles = makeStyles({
   avatar: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles } from "@material-ui/core";
 import "./styles/InstagramSearchResults.css";
 import { useInstagramDataLayerValue } from '../../contexts/InstagramDataLayer';
-import { getUser, getUserPosts } from '../instagram/instagram';
+import { getUser, getUserPosts } from '../api/instagram/instagram';
 
 const useStyles = makeStyles({
   avatar: {

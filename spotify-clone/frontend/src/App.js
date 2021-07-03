@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import './App.css';
 import Login from "./components/Login"
-import { getTokenFromUrl } from "./components/spotify/spotify";
+import { getTokenFromUrl } from "./components/api/spotify/spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue } from "./contexts/DataLayer";
 import MainBody from "./components/main-components/MainBody";
-import { authorizeInstagram, searchInstagram } from "./components/instagram/instagram";
+import { authorizeInstagram } from "./components/api/instagram/instagram";
 
 const spotify = new SpotifyWebApi();
 

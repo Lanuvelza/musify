@@ -194,9 +194,10 @@ function Home() {
             /> 
             <h2>{replaceWithQuotations(latest_video?.snippet?.title)}</h2>
             <p><TimeAgo date={latest_video?.snippet?.publishedAt} /></p>
+            {latest_video?.snippet?.description &&
             <div className="youtube__description">
               <p>{latest_video?.snippet?.description}</p>
-            </div>
+            </div>}
           </div>
         </div>}
 

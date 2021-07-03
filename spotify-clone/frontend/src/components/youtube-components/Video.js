@@ -2,7 +2,7 @@ import React from 'react';
 import TimeAgo from 'react-timeago'
 import Youtube from 'react-youtube';
 import { useYoutubeDataLayerValue } from '../../contexts/YoutubeDataLayer';
-import { replaceWithQuotations } from '../youtube/youtube';
+import { replaceWithQuotations } from '../api/youtube/youtube';
 import "./styles/Video.css"; 
 
 function Video() {
