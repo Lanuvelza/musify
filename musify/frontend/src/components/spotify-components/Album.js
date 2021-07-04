@@ -12,8 +12,6 @@ function Album({spotify}) {
   const handleClick = () => {
     spotify.getAlbum(album?.id)
     .then((album) => {
-      console.log(album);
-      console.log(album.tracks);
       dispatch({
         type: "SET_ALBUM",
         album
@@ -28,9 +26,6 @@ function Album({spotify}) {
   const playAlbum = () => {
     spotify.getAlbum(album?.id)
     .then((album) => {
-      console.log(album);
-      console.log(album.tracks);
-      console.log(album.uri);
       dispatch({
         type: "SET_ALBUM",
         album

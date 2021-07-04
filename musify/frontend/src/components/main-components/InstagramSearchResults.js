@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 })
 
 
-function InstagramSearchResults({userItem}) {
+function InstagramSearchResults({userItem, key}) {
   const [{instagram__user}, instagramDispatch] = useInstagramDataLayerValue()
 
   const classes = useStyles(); 
@@ -22,7 +22,6 @@ function InstagramSearchResults({userItem}) {
   const selectUser = () => {
     getUser(userItem?.username)
     .then((response) => {
-      console.log(response)
 
       const user = response.data;
       
@@ -34,7 +33,6 @@ function InstagramSearchResults({userItem}) {
 
     getUserPosts(userItem?.pk)
     .then((response) => {
-      console.log(response)
 
       const posts = response.data; 
       const latest_post = response.data[0];
@@ -59,7 +57,7 @@ function InstagramSearchResults({userItem}) {
 
   return (
     <div 
-      key={userItem?.pk} 
+      key={key} 
       className={userItem.pk === instagram__user?.id ? "results__userBody__selected" : "results__userBody"}
       onClick={selectUser}
     >

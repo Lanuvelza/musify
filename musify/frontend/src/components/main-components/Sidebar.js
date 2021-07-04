@@ -22,7 +22,6 @@ function Sidebar() {
   }
 
   const toggleSearch = () => {
-    console.log("Searchmode");
     dispatch({
       type: "SET_SEARCH_MODE",
       searchmode: !searchmode
@@ -30,7 +29,6 @@ function Sidebar() {
   }
 
   const toggleSpotify = () => {
-    console.log("Spotify");
     viewDispatch({
       type: "SET_VIEW",
       view: "SPOTIFY"
@@ -38,7 +36,6 @@ function Sidebar() {
   }
 
   const toggleYouTube = () => {
-    console.log("Youtube");
     viewDispatch({
       type: "SET_VIEW", 
       view: "YOUTUBE"
@@ -46,7 +43,6 @@ function Sidebar() {
   }
 
   const toggleInstagram = () => {
-    console.log("Instagram");
     viewDispatch({
       type: "SET_VIEW",
       view: "INSTAGRAM"

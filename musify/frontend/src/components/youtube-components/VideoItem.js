@@ -4,7 +4,7 @@ import { replaceWithQuotations } from '../api/youtube/youtube';
 import "./styles/VideoItem.css";
 
 
-function VideoItem({video}) {
+function VideoItem({video, key}) {
   const [{}, youtubeDispatch] =useYoutubeDataLayerValue();
 
   const selectVideo = () => {
@@ -15,7 +15,7 @@ function VideoItem({video}) {
   }
 
   return (
-  <div className="videoitem__body">
+  <div key={key} className="videoitem__body">
     <img 
       src={video?.snippet?.thumbnails?.high?.url} 
       alt={video?.snippet?.title} 

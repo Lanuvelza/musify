@@ -7,7 +7,6 @@
   background-color: white;
   color: gray;
   min-width: 20vw;
-  /* width: 20vw; */
   border-radius: 30px;
   padding: 10px;
   align-items: center;
@@ -32,7 +31,6 @@ input:focus {
 .header__right {
   display: flex;
   align-items: center;
-  /* position: fixed;  */
   right: 25px;
 }
 

@@ -1,5 +1,4 @@
 .post {
-  /* width: 48vw; */
   margin: 20px;
   padding: 20px;
   background: linear-gradient(to bottom, rgba(5,4,4, 0.8) 30%, transparent );
@@ -13,7 +12,6 @@
 
 .post__body {
   display: flex;
-  /* height: 34vh; */
 }
 
 .post__picture {

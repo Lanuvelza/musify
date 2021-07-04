@@ -38,7 +38,6 @@ function Artist({artist, spotify}) {
   const handleClick = () => {
     spotify.getArtistTopTracks(artist.id, "US")
       .then((results) => {
-        console.log("artist tracks", results);
         dispatch({
           type: "SET_TRACKS",
           tracks: results.tracks

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./styles/MainBody.css";
 import Sidebar from "./Sidebar";
 import SpotifyBody from "../spotify-components/SpotifyBody";

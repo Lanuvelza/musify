@@ -6,7 +6,6 @@ function SongRowHome({ track }) {
   const [{latest_album, current_track}, dispatch] = useDataLayerValue();
 
   const playTrack = () => {
-    console.log(track);
     dispatch({
       type: "SET_CURRENT_TRACK", 
       current_track: track

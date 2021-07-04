@@ -27,7 +27,7 @@ function ChannelVideos() {
       </div>
       <div className="channelvideo__library">
         {videos?.map((video) => (
-          <VideoItem video={video} />
+          <VideoItem video={video} key={video.etag} />
         ))}
       </div>
     </div>

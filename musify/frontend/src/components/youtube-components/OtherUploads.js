@@ -27,7 +27,7 @@ function OtherUploads() {
       </div>
       <div className="othervideo__library">
         {query_videos?.map((video) => (
-          <VideoItem video={video} />
+          <VideoItem video={video} key={video.etag} />
         ))}
       </div>
     </div>

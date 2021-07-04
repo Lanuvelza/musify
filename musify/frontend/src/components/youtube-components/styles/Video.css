@@ -1,11 +1,7 @@
 .latestvideo__body {
   width: 56vw;
-  /* height: 30vh; */
-  /* margin-top: 20px; */
   margin: 20px;
-  /* margin-left: 5px; */
   padding: 20px;
-  /* background-color: white; */
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -15,13 +11,10 @@
 .video__header {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; 
-  align-items: center; */
   margin-bottom: 15px;
 }
 
 .video__header > h2 {
-  /* text-align: center; */
   color: lightsteelblue;
   font-size: 48px;
 }
@@ -33,10 +26,8 @@
 
 .video__player { 
   width: 50vw;
-  /* height: 40vh; */
   display: flex;
   justify-content: center;
-  /* margin: auto; */
   opacity: 0.7;
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
   
@@ -44,10 +35,8 @@
 
 .video__player__playing { 
   width: 50vw;
-  /* height: 40vh; */
   display: flex;
   justify-content: center;
-  /* margin: auto; */
   opacity: 1;
 }
 

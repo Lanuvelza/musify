@@ -1,6 +1,6 @@
 const axios = require('axios');
 const api_key = process.env.REACT_APP_YOUTUBE_API_KEY;
-const baseURL = 'https://www.googleapis.com/youtube/v3';
+const baseURL = 'http://www.googleapis.com/youtube/v3';
 
 
 // sort channels by the number of suscribers in descending order
@@ -27,35 +27,26 @@ export const searchChannels = (query) => {
   return axios.get(`${baseURL}/search?key=${api_key}&q=${query}&type=channel&part=snippet&maxResults=25`)
   .then(response => {
 
-    // console.log(response);
     
     const ids = response.data.items.map((item) => {
       return item.id.channelId;
     }) 
 
-    // console.log(ids);
 
     const channels = ids.map((id) => {
       return axios.get(`${baseURL}/channels?key=${api_key}&part=snippet,contentDetails,statistics&id=${id}`)
       .then(result => {
-        // console.log(result);
         return result.data;
       });
     })
 
     const channelsData = Promise.all(channels).then(data => {
-      console.log(data);
       const channelDataDetails = data.map((detail) => {
-        // console.log(detail);
-        // console.log(detail.items);
-        // console.log(detail.items[0]);
         return detail.items[0];
       })
 
       return channelDataDetails;
     });
-
-    // console.log(channelsData);
 
     return channelsData;
   });
@@ -112,16 +103,16 @@ export const replaceWithQuotations = (string) => {
   let formattedString = string
 
   if (string.includes('&quot;')) {
-    formattedString = formattedString.replace(/&quot;/g, '\"');
+    formattedString = formattedString.replace(/&quot;/g, '"');
   }
 
   if (string.includes("&amp;")) {
-    formattedString = formattedString.replace(/&amp;/g, "\&");
+    formattedString = formattedString.replace(/&amp;/g, "&");
   }
 
 
   if (string.includes('_')) {
-    formattedString = formattedString.replace(/_/g, '\-');
+    formattedString = formattedString.replace(/_/g, '-');
   }
  
   return formattedString.replace(/&#([0-9]{1,4});/gi , function(match, numStr) {

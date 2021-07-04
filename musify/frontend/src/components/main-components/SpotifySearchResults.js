@@ -36,7 +36,7 @@ const filterAblumsByMarket = function(albums, country) {
   return filteredAlbums; 
 }
 
-function SpotifySearchResults({artistItem, spotify}) {
+function SpotifySearchResults({artistItem, key, spotify}) {
   const [{artist} ,dispatch] = useDataLayerValue();
 
   const classes = useStyles();
@@ -46,11 +46,7 @@ function SpotifySearchResults({artistItem, spotify}) {
     spotify.getArtistAlbums(artistItem.id, {include_groups: ["album", "single"], limit: 50})
     .then((results) => {
 
-      console.log(results);
-
       const albums = filterAblumsByMarket(results.items, "US");
-      console.log(albums);
-
       const latest_album = albums[0]; 
 
       dispatch({
@@ -95,7 +91,7 @@ function SpotifySearchResults({artistItem, spotify}) {
 
   return (
     <div 
-      key={artistItem.id} 
+      key={key} 
       className={artistItem.id === artist?.id ? "results__itemBody__selected" : "results__itemBody"} 
       onClick={selectArtist}
     >

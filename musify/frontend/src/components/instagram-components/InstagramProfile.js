@@ -1,4 +1,3 @@
-import { Avatar } from '@material-ui/core';
 import React from 'react';
 import { useInstagramDataLayerValue } from '../../contexts/InstagramDataLayer';
 import "./styles/InstagramProfile.css"; 

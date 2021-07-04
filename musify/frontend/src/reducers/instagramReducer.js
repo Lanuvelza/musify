@@ -8,8 +8,7 @@ export const initialInstagramDataState = {
 }
 
 const instagramReducer = (state, action) => {
-  console.log(action)
-
+  
   switch(action.type) {
     case "SET_USER":
       return {

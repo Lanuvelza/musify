@@ -14,13 +14,12 @@ const useStyles = makeStyles({
 })
 
 
-function YoutubeSearchResults({channelItem}) {
+function YoutubeSearchResults({channelItem, key}) {
   const [{query, channel}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const classes = useStyles(); 
 
   const selectChannel = () => {
-    console.log(channelItem);
     youtubeDispatch({
       type: "SET_CHANNEL",
       channel: channelItem
@@ -31,7 +30,6 @@ function YoutubeSearchResults({channelItem}) {
 
       const videos = response;
       const latestVideo = videos[0]; 
-      console.log(response);
       youtubeDispatch({
         type: "SET_VIDEOS",
         videos: videos
@@ -68,7 +66,7 @@ function YoutubeSearchResults({channelItem}) {
 
   return (
     <div 
-      key={channelItem.id} 
+      key={key} 
       className={channelItem.id === channel?.id ? "results__channelBody__selected" : "results__channelBody"}
       onClick={selectChannel}
     >

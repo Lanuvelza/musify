@@ -11,7 +11,6 @@ import { useViewDataLayerValue } from "../../contexts/ViewDataLayer";
 
 
 function Header({ spotify }) {
-  console.log(spotify);
   const [{ user, searchmode }, dispatch] = useDataLayerValue(); 
   const [{}, youtubeDispatch] = useYoutubeDataLayerValue();
   const [{}, instagramDispatch] = useInstagramDataLayerValue();
@@ -23,13 +22,10 @@ function Header({ spotify }) {
 
     searchInstagram(search)
     .then(response => {
-      console.log(response);
       const users = response.users.map((item) => {
         return item.user
       });
-      console.log(users)
       const results = filterByVerification(users);
-      console.log(results);
       instagramDispatch({
         type: "SET_INSTAGRAM_USERS",
         instagram__users: results
@@ -38,9 +34,7 @@ function Header({ spotify }) {
 
     searchChannels(search)
     .then((results) => {
-      // console.log(results);
       const OrderedChannels = sortChannelsBySubscriberCount(filterChannelsByVisibleSubscriberCount(results));
-      // console.log(OrderedChannels);
 
       youtubeDispatch({
         type: "SET_CHANNELS",
@@ -55,7 +49,6 @@ function Header({ spotify }) {
 
     spotify.searchArtists(search)
     .then((results) => {
-      // console.log(results.artists);
       dispatch({
         type: "SET_ARTISTS",
         artists: results.artists

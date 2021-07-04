@@ -44,7 +44,6 @@
   margin: 20px -5px;
   margin-bottom: 25px;
   padding-top: 20px;
-  /* background: linear-gradient(to bottom, rgba(5,4,4, 0.4) 50%, transparent 60%); */
 }
 
 .body__albums {
@@ -60,10 +59,8 @@
   margin-bottom: -10px;
 }
 .body__albumsDisplay {
-  /* height: 425px; */
   display: flex;
   overflow-x: scroll;
   margin: 20px;
-  /* margin-bottom: 85px; */
   padding: 20px;
 }

@@ -4,7 +4,6 @@ const axios = require('axios');
 export const authorizeInstagram = () => {
   return axios.post(`/authorize`)
   .then((response) => {
-    console.log(response)
     return response; 
   });
   
@@ -14,33 +13,27 @@ export const authorizeInstagram = () => {
 export const searchInstagram = (query) => {
   return axios.get(`/search/${query}`)
   .then((response) => {
-    console.log(response);
     return response.data;
   })
 }
 
 // filter users by verified as celebrities from Instagram 
 export const filterByVerification = (users) => {
-  console.log(users);
   return users.filter((user) => user.is_verified === true); 
 }
 
 // get the user 
 export const getUser = (username) => {
-  console.log(username); 
   return axios.get(`/user/${username}`)
   .then((response) => {
-    console.log(response); 
     return response
   })
 }
 
 // get the users posts
 export const getUserPosts = (userid) => {
-  console.log(userid);
   return axios.get(`/user/${userid}/posts`)
   .then((response) => {
-    console.log(response); 
     return response;
   })
 }

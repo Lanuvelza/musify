@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     width: '50px',
   },
   button: {
-    // backgroundColor: 'rgb(5, 4, 4)',
     color: 'lightsteelblue',
     borderColor: 'lightsteelblue',
     margin: 'auto',
@@ -32,7 +31,7 @@ const useStyles = makeStyles({
 
 
 function SearchSelection() {
-  const [{artist, searching}, dispatch] = useDataLayerValue(); 
+  const [{artist}, dispatch] = useDataLayerValue(); 
   const [{channel}, youtubeDispatch] = useYoutubeDataLayerValue();
   const [{instagram__user}, instagramDispatch] = useInstagramDataLayerValue();
   const [{}, viewDispatch] = useViewDataLayerValue();

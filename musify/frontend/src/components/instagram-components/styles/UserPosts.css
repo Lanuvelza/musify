@@ -1,16 +1,12 @@
 .posts_library {
-  /* width: 66vw; */
   margin: 20px;
   margin-left: -20px;
   margin-bottom: 40px;
   padding: 30px;
-  /* background: rgba(5,4,4,0.4); */
-  /* background: rgba(22, 22, 22, 0.4); */
   background: linear-gradient(to top, rgba(5,4,4, 0.4) 30%, transparent );
   color: lightsteelblue;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .posts_library_header {
@@ -22,7 +18,6 @@
   margin-bottom: 20px;
   width: 64vw;
   height: 40vh;
-  /* background: linear-gradient(to top, rgba(5,4,4, 0.4) 80%, transparent ); */
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;

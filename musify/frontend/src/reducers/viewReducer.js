@@ -3,7 +3,6 @@ export const initialViewState = {
 }
 
 const viewReducer = (state, action) => {
-  console.log(action); 
 
   switch(action.type) {
     case "SET_VIEW":

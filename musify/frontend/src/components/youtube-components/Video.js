@@ -6,7 +6,7 @@ import { replaceWithQuotations } from '../api/youtube/youtube';
 import "./styles/Video.css"; 
 
 function Video() {
-  const [{latest__video, video, videos, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
+  const [{video, videos, youtube__playing}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   const playerOnReady = (event) => {
 
@@ -35,6 +35,7 @@ function Video() {
     height: '590',
     width: '940',
     playerVars: {
+      'origin': 'http://localhost:3000'
     }
   }
 

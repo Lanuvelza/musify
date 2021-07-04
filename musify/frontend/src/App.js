@@ -22,7 +22,6 @@ function App() {
         type: "SET_TOKEN",
         token: _token,
       });
-      console.log("[token]", token); 
       spotify.setAccessToken(_token);
       spotify.getMe().then((user) => {
         dispatch({
@@ -30,28 +29,9 @@ function App() {
           user,
         });
       });
-      spotify.getUserPlaylists()
-      .then((playlists) => {
-        // console.log(playlists);
-        dispatch({
-          type: "SET_PLAYLISTS",
-          playlists
-        });
-      });
-      spotify.getPlaylist("37i9dQZF1E34Ucml4HHx1w")
-      .then((playlist) => {
-        // console.log(playlist)
-        dispatch({
-          type: "SET_DISCOVER_WEEKLY", 
-          discover_weekly: playlist, 
-        });
-      });
     }
 
-    authorizeInstagram()
-    .then(response => {
-      console.log(response);
-    });
+    authorizeInstagram();
 
   }, []);
 
