@@ -38,7 +38,7 @@ function MainBody({ spotify }) {
                 {searching && artists?.items?.length ? 
                 
                 artists?.items?.map((item) => (
-                <SpotifySearchResults artistItem={item} key={item.id} spotify={spotify}/>
+                <SpotifySearchResults artistItem={item} keID={item.id} spotify={spotify}/>
                 )) : <p>No results found.</p>}
               </div>
               <h2>Youtube Channels</h2>

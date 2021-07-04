@@ -36,7 +36,7 @@ const filterAblumsByMarket = function(albums, country) {
   return filteredAlbums; 
 }
 
-function SpotifySearchResults({artistItem, key, spotify}) {
+function SpotifySearchResults({artistItem, keyID, spotify}) {
   const [{artist} ,dispatch] = useDataLayerValue();
 
   const classes = useStyles();
@@ -91,7 +91,7 @@ function SpotifySearchResults({artistItem, key, spotify}) {
 
   return (
     <div 
-      key={key} 
+      key={keyID} 
       className={artistItem.id === artist?.id ? "results__itemBody__selected" : "results__itemBody"} 
       onClick={selectArtist}
     >
