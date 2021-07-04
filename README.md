@@ -16,6 +16,7 @@ musify is a single page platform that enables users to quickly find out what the
 ## Stack
 
 Front: React, MUI, JS, ContentAPI, Spotify Web API, Youtube API 
+\
 Back: Express, Axios, Instagram Web API 
 
 ## Screenshots
