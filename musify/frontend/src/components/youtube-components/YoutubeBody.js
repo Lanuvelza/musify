@@ -10,7 +10,11 @@ function YoutubeBody() {
   const [{channel}, youtubeDispatch] = useYoutubeDataLayerValue();
 
   if (!channel) {
-    return null;
+    return (
+      <div className="youtube__default">
+        <h2>No Youtube artist channel selected yet.</h2>
+      </div>
+    );
   } 
 
   return (

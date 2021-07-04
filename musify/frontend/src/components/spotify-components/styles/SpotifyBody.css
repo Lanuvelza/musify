@@ -1,16 +1,7 @@
-/* 
-.body {
-  height: 100vh;
-  flex: 0.8;
-  color: white;
-  padding: 30px;
-  background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
-  overflow-y: overlay;
+.spotify__default {
+  margin-left: 20px;
+  text-shadow: 2px 2px 20px #000000;
 }
-.body::-webkit-scrollbar {
-  display: none;
-} */
-
 
 .body__info {
   display: flex;

@@ -1,5 +1,5 @@
 import React from "react"; 
-import "./styles/Body.css";
+import "./styles/SpotifyBody.css";
 import { useDataLayerValue } from "../../contexts/DataLayer";
 import SongRow from "./SongRow";
 import Album from "./Album";
@@ -13,6 +13,14 @@ function SpotifyBody({spotify}) {
     tracks, 
     artist, 
   }] = useDataLayerValue();
+
+  if (!artist) {
+    return (
+      <div className="spotify__default">
+        <h2>No Spotify artist selected yet.</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="body">

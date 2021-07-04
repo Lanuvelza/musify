@@ -10,7 +10,11 @@ function InstagramBody() {
   const [{instagram__user}, instagramDispatch] = useInstagramDataLayerValue();
 
   if (!instagram__user) {
-    return null;
+    return (
+      <div className="instagram__default">
+        <h2>No Instagram artist account selected yet.</h2>
+      </div>
+    );
   }
 
   return (

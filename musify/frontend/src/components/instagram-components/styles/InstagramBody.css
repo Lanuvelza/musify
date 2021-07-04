@@ -1,3 +1,8 @@
+.instagram__default {
+  margin-left: 20px;
+  text-shadow: 2px 2px 20px #000000;
+}
+
 .main__instagram__body {
   margin-bottom: 85px;
 }
