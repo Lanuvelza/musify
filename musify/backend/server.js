@@ -17,12 +17,10 @@ app.use(
 
 app.get('/test', (req, res) => {
   res.status(200).send("Hello World");
-  // res.send(process.env.INSTAGRAM_USERNAME, process.env.INSTAGRAM_PASSWORD);
 })
 
 app.post('/authorize', (req, res) => {
   login().then((response) => {
-    console.log("server-response", response);
     res.send(response);
   })
 })

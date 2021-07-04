@@ -14,31 +14,24 @@ const login = async () => {
   .then(() => {
      return client.getProfile()
     .then((response) => {
-      console.log("instagram-queries response", response);
       return response;
     })
   })
 }
 
 const search = async (query) => {
-  console.log(query)
   const results = await client.search({query: query})
-  console.log(results.users); 
   return results;
 }
 
 
 const getUser = async (username) => {
-  console.log(username)
   const user = await client.getUserByUsername({ username: username });
-  console.log(user)
   return user;
 }
 
 const getUserPosts = async (userid) => {
-  // console.log(userid) 
   const posts = await client._getPosts({ userId: userid });
-  // console.log(posts.edge_owner_to_timeline_media.edges); 
 
   const media = posts.edge_owner_to_timeline_media.edges;
   let pageToken = posts.edge_owner_to_timeline_media.page_info.end_cursor; 
