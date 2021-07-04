@@ -1,6 +1,6 @@
 # musify
 
-![Logo]()
+![Logo](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/logo.png?raw=true)
 
 musify is a single page platform that enables users to quickly find out what their favourite music artist has been up to recently across Spotify, Youtube and Instagram medias.
 
@@ -20,31 +20,34 @@ Back: Express, Axios, Instagram Web API
 
 ## Screenshots
 
-![Login]()
+![Login](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/login.png?raw=true)
 \
 *Login with Spotify User Authentication*
 
-
-![Home Page]()
-\
-*The Home Page that displays the latest updates from an artist*
-\
-\
-![Search]()
+![Search](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/search.png?raw=true)
 \
 *Search and find your artist within a single query across multiple social medias*
+
+![Home Page 1](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/home1.png?raw=true)
+![Home Page 2](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/home2.png?raw=true)
 \
+*The Home Page that displays the latest updates from an artist*
+
+
 \
-![Spotify]()
+![Spotify 1](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/spotify1.png?raw=true)
+![Spotify 2](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/spotify2.png?raw=true)
 \
 *Listen to your favourite artist's latest album or dive into their past albums if you are feeling nostalgic*
-\
-\
-![Youtube]()
+
+![Youtube 1](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/youtube1.png?raw=true)
+![Youtube 2](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/youtube2.png?raw=true)
 \
 *Watch their latest uploads on their Youtube channels or dig deeper into other content and related videos*
-\
-![Instagram]()
+
+
+![Instagram 1](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/instagram1.png?raw=true)
+![Instagram 2](https://github.com/Lanuvelza/spotify-clone/blob/main/musify/docs/instagram2.png?raw=true)
 \
 *Find out their latest Instagram post or browse for older posts in the past*
 
@@ -62,6 +65,6 @@ Back: Express, Axios, Instagram Web API
 
 ## To-Dos 
 
-* migrate frontend api to backend 
+* migrate all frontend api to backend 
 * personalization such as allowing users to set their favourite artists  
 * responsive design 
