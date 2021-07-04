@@ -8,7 +8,7 @@ musify is a single page platform that enables users to quickly find out what the
 ## Features
 
 * Catch up or discover your artist across Spotify, Youtube and Instagram platforms with a single search
-* Listen to an artist's lastest album or songs from previous albums on the web or even on your pc
+* Listen to an artist's lastest album or songs from previous albums on the web or on your spotify application
 * Watch an artist's most recent upload on their Youtube channel or browse other recent videos related to the them
 * Read and find an artist's most recent post on Instagram or look for older posts to see what they have done
 * Navigate between different artists on different platform medias such as finding out the latest release on Spotify for artist A and watching the latest Youtube video for artist B
